@@ -11,7 +11,7 @@
 		.home .home,
 		.about .about,
 		.contact .contact{
-			background-color: fuchsia;
+			background-color: green;
 		}
 	</style>
 </head>
