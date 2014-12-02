@@ -1,0 +1,37 @@
+body{
+	background: #408080;
+	color: #E1ECEC;
+	font-family: 'Oleo Script', cursive;
+	font-size: 1.2em;
+}
+input, label{
+	display:block;
+}
+input,
+textarea{
+	width: 270px;
+	padding: 0.4em 0;
+	margin-bottom: 0.9em;
+}
+
+h1{
+	font-weight: normal;
+	font-size: 2.3em;
+}
+input[type="submit"]{
+	border:none;
+	margin-top: .4em;
+	border-radius: 2px;
+	padding: 0.4em;
+	font-size: 0.9em;
+	background-color: #3F3F3F;
+	color: #E1ECEC;
+	font-family: 'Oleo Script', cursive;
+	cursor:pointer;
+}
+input[type="submit"]:hover{
+	background-color: #4D4D4D;
+}
+.inline-error{
+	color: #FFBE7D;
+}
