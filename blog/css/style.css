@@ -1,0 +1,35 @@
+body{
+	max-width: 1000px;
+	margin:0 auto;
+	font-family: 'Average Sans', sans-serif;
+}
+header h1{
+	font-size: 2.4em;
+}
+article h1{
+	color: #1AB59D;
+	margin-bottom: .25em;
+	font-size:1.5em;
+	font-family: 'Indie Flower', cursive;
+	font-weight: normal;
+}
+.date{
+	color:#A2A2A2;
+	font-style: italic;
+}
+#content{
+	width:70%;
+	float:left;
+}
+
+p{
+	line-height: 1.4em;
+}
+
+#sidebar{
+	width:30%;
+	float: right;
+}
+#colophon{
+	clear: both;
+}
