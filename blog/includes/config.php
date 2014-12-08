@@ -13,4 +13,9 @@ if( $db->connect_errno > 0 ){ //check to see if the database has more than 0 err
 	die('Unable to connect to Database');
 }
 
+//error reporting
+//show all errors except notices ( E_ALL & ~E_NOTICE )
+//show all errors ( E_ALL )
+error_reporting( E_ALL & ~E_NOTICE );
+
 //no close php

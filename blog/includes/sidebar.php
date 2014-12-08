@@ -14,7 +14,10 @@
 		<h2>Latest Posts</h2>
 		<ul>
 			<?php while( $row_latest = $result_latest->fetch_assoc() ){ ?>
-				<li><a href="#"><?php echo $row_latest['title'] ?></a></li>
+				<li><a href="single-post.php?post_id=<?php 
+							echo $row_latest['post_id'] ?>">
+
+						<?php echo $row_latest['title'] ?></a></li>
 			<?php }//end while ?>
 		</ul>
 	</section>

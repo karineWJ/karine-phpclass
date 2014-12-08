@@ -1,24 +1,5 @@
-<?php
-//connect to DB!
-require('includes/config.php');
-require_once('includes/functions.php');
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Demo PHP + MySQL Blog</title>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<header id="banner">
-		<h1>Welcome to Karine's Blog</h1>
-	</header>
-	
-	<main id="content">
+<?php require('includes/header.php'); ?>
+	<main id="content" class="cf">
 		<?php //get all the published posts, most recent first
 			$query = "SELECT posts.*, users.username , categories.title AS category
 					  FROM posts, users, post_cats, categories
@@ -53,6 +34,4 @@ require_once('includes/functions.php');
 	
 	<?php include('includes/sidebar.php'); ?>
 
-	<footer id="colophon" class="cf">&copy; 2014 Karine Wu Jye</footer>
-</body>
-</html>
+	<?php include('includes/footer.php'); ?>
