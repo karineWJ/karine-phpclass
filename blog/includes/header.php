@@ -12,6 +12,8 @@ require_once('includes/functions.php');
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	<!-- This link allows feed readers and apps to find our rss file -->
+	<link rel="alternate" type="application/rss+xml" href="rss.php">
 </head>
 <body>
 	<header id="banner">
