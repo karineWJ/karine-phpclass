@@ -17,6 +17,10 @@ require_once('includes/functions.php');
 </head>
 <body>
 	<header id="banner">
-		<h1>Welcome to Karine's Blog</h1>
+		<h1>Welcome to My Blog</h1>
+		<form action="search.php" method="get" id="searchform">
+			<input type="search" name="phrase" id="phrase" value="<?php echo $_GET['phrase']; ?>">
+			<input type="submit" value="Search">
+		</form>
 	</header>
 	
