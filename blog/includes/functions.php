@@ -32,4 +32,33 @@ function convTimestamp($date){
   return $stamp;
 }
 
+/**
+ * Clean String Inputs before submitting to DB
+ *@param  $input - the dirty data that needs cleaning!
+ *@param  $db -  Database object
+ *@return cleaned data
+ */
+function clean_input($input, $db){ //arguments are things coming from the outside file
+	return mysqli_real_escape_string( $db, strip_tags($input));
+}
+
+function kwj_array_list($array){
+	//if the array exists, display it
+	if( is_array( $array )){
+	echo '<ul>';
+	//output one list item per thing in the array
+	foreach( $array as $item ){ // $item is a made up alias name for the $array
+		echo '<li>' . $item . '</li>';
+	}
+	echo '</ul>';
+	}
+}
+
+//Display one error message (use this next to a field)
+function kwj_inline_error( $array, $item ){
+	//check to make sure the item exists in the array
+	if( isset( $array[$item] ) ){
+		echo '<div class="inline-error">' . $array[$item] . '</div>';
+	}
+}
 //no close php
