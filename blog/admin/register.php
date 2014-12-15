@@ -111,23 +111,22 @@ if($_POST['did_register']){
 
 	<?php //if there are errors, show them
 	if( isset($errors) ){
-		
 		kwj_array_list($errors);
 
 	}
 	 ?>
 	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 		<label>Create a username:</label>
-		<input type="text" name="username" id="username">
+		<input type="text" name="username" id="username" value="<?php echo $username; ?>">
 
 		<label>Email Address:</label>
-		<input type="email" name="email" id="email">
+		<input type="email" name="email" id="email" value="<?php echo $email; ?>">
 
 		<label>Password:</label>
-		<input type="password" name="password" id="password">
+		<input type="password" name="password" id="password" value="<?php echo $password; ?>">
 
 		<label>
-		<input type="checkbox" name="policy" value="1" id="policy">
+		<input type="checkbox" name="policy" value="1" id="policy" <?php if($policy){echo 'checked';} ?>>
 		I agree to the <a href="#">terms of service and Privacy Policy</a>
 		</label>
 
