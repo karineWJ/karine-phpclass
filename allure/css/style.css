@@ -26,15 +26,56 @@
 
 }
 
+
+/******* BOX SIZING *******/
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 body{
     width: 100%;
+    min-width:320px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    margin: 0 auto;
 }
 header{
     background-color: black;
 }
 nav li{
     list-style-type: none;
+    display: inline-block;
+    padding: .5em;
+}
+nav li a{
     color:#d9dede;
     font-family: 'dolce_vitaquite_regular';
     letter-spacing: 1px;
+    text-decoration: none;
 }
+.logo{
+    display:block;
+    padding: 1em 0 .5em .75em;
+}
+.login{
+    color: #ff8659;
+}
+.sign-up{
+    background-color: #697fbf;
+    color: white;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 0.8em;
+}
+#home-banner{
+    background-image: url(https://placeimg.com/496/420/arch);
+    height: 420px;
+}
+h1{
+    font-family: 'dolce_vita_heavyafewXpounds';
+    color:white;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+

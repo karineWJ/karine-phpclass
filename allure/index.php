@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Allure</title>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<header>
-		<a href="#"><img src="images/allure_logo_white.png"></a>
-		<nav>
-			<ul>
-				<li><a href="#">Explore</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">How it works</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Login</a></li>
-			</ul>
-		</nav>
-	</header>
-
+<?php require('includes/header.php'); ?>
 	<main>
-		<section></section>
+		<section id="home-banner">
+			<h1>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</h1>
+			<a href="#" class="sign-up">Get Started</a>
+		</section>
 	</main>
 
-</body>
-</html>
+	
