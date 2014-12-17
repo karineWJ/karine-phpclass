@@ -61,12 +61,10 @@ body{
 }
 
 h1{
-    font-family: 'dolce_vita_heavyafewXpounds';
-    color:white;
     font-size: 1.5em;
-    line-height: 1.5em;
     margin: 0;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 h2,h3{
@@ -85,7 +83,19 @@ a{
     text-decoration: none;
 }
 
-
+input{
+    display:block;
+    margin: 0.6em auto 0.4em;
+    padding: 0.7em 0.50em;
+}
+input[type="submit"]{
+    background-color: #697fbf;
+    border: none;
+    color: white;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+    cursor: pointer;
+}
 
 /********************************************
 ============= NAV STYLES ===================
@@ -124,6 +134,35 @@ nav li a{
     color: #ff8659;
 }
 
+/**********************************
+=========== LOGIN FORM ============
+**********************************/
+
+#login-container,
+#register-container{
+    width: 315px;
+    margin: 2em auto 0;
+    border-top: solid 10px black;    
+    text-align: center;
+}
+#login-container h1,
+#register-container h1{
+    padding: 1em 0;
+    font-size: 1.2em;
+
+}
+
+#login-container img,
+#register-container img{
+    margin-top: 2em;
+}
+
+#login-form input,
+#register-form input{
+    width: 280px;
+}
+
+
 /******************************************
 ================== MAIN STYLE ================
 *********************************************/
@@ -139,7 +178,11 @@ nav li a{
     padding: 3em 0 2em;
 }
 
-
+#header-title{
+    color:white;
+    font-family: 'dolce_vita_heavyafewXpounds';
+    line-height: 1.5em;
+}
 .sign-up{
     background-color: #697fbf;
     color: white;

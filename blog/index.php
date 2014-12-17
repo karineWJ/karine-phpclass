@@ -7,6 +7,7 @@
 					  AND posts.user_id = users.user_id
 					  AND posts.post_id = post_cats.post_id
 					  AND categories.category_id = post_cats.category_id
+					  GROUP BY categories.category_id
 					  ORDER BY date DESC "; //DESC=>newest to oldest post; ASC=>oldest to newest
 			//Run the query. Hold onto the results in a variable
 			$result = $db->query( $query );

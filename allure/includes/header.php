@@ -1,7 +1,8 @@
-<!-- <?php 
+ <?php 
 //connect to DB
-/*require('config.php');*/
-?> -->
+require('config.php');
+require_once('includes/functions.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 			<h1 class="logo"><a href="index.php">Allure</a></h1>
 			<nav id="home-nav">
 				<ul>
-					<li class="login"><a href="#" >Login</a></li>
+					<li class="login"><a href="admin/login.php" >Login</a></li>
 					<li><a href="#">Explore</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="#">How it works</a></li>

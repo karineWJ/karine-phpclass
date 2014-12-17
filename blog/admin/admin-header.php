@@ -19,6 +19,7 @@ $user_id = $_SESSION['user_id'];
 <head>
 	<meta charset="utf-8">
 	<title>Blog Admin Panel</title>
+	<link rel="stylesheet" type="text/css" href="../css/admin-style.css">
 </head>
 <body>
 
@@ -27,10 +28,10 @@ $user_id = $_SESSION['user_id'];
 	<nav>
 		<ul>
 			<li><a href="index.php">Dashboard</a></li>
-			<li><a href="#">Write New Post</a></li>
-			<li><a href="#">Manage Posts</a></li>
-			<li><a href="#">Manage Comments</a></li>
-			<li><a href="#">Edit profile</a></li>
+			<li><a href="write-post.php">Write New Post</a></li>
+			<li><a href="manage-post.php">Manage Posts</a></li>
+			<li><a href="manage-comments.php">Manage Comments</a></li>
+			<li><a href="edit-profile.php">Edit Profile</a></li>
 		</ul>
 	</nav>
 
