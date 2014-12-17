@@ -1,7 +1,7 @@
-<?php 
+<!-- <?php 
 //connect to DB
-require('config.php');
-?>
+/*require('config.php');*/
+?> -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +14,16 @@ require('config.php');
 </head>
 <body>
 	<header>
-		<a href="#" class="logo"><img src="images/allure_logo_white.png"></a>
-		<nav>
-			<ul>
-				<li><a href="#">Explore</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">How it works</a></li>
-				<li><a href="#" class="login">Login</a></li>
-			</ul>
-		</nav>
+		<div class="container">
+			<h1 class="logo"><a href="index.php">Allure</a></h1>
+			<nav id="home-nav">
+				<ul>
+					<li class="login"><a href="#" >Login</a></li>
+					<li><a href="#">Explore</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="#">How it works</a></li>
+				</ul>
+			</nav>
+		</div>
 
 	</header>
