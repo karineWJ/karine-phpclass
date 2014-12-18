@@ -1,0 +1,145 @@
+/**********  CSS FONTS ***************/
+
+@font-face {
+    font-family: 'dolce_vita_heavyafewXpounds';
+    src: url('dolce_vita_heavy_bold-webfont.eot');
+    src: url('dolce_vita_heavy_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dolce_vita_heavy_bold-webfont.woff2') format('woff2'),
+         url('dolce_vita_heavy_bold-webfont.woff') format('woff'),
+         url('dolce_vita_heavy_bold-webfont.ttf') format('truetype'),
+         url('dolce_vita_heavy_bold-webfont.svg#dolce_vita_heavyafewXpounds') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dolce_vitaquite_regular';
+    src: url('dolce_vita-webfont.eot');
+    src: url('dolce_vita-webfont.eot?#iefix') format('embedded-opentype'),
+         url('dolce_vita-webfont.woff2') format('woff2'),
+         url('dolce_vita-webfont.woff') format('woff'),
+         url('dolce_vita-webfont.ttf') format('truetype'),
+         url('dolce_vita-webfont.svg#dolce_vitaquite_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/******* BOX SIZING *******/
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/************** Clear fix *****************/
+
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+.cf {
+    zoom:1;
+}
+
+/***************************************************
+==================  BASIC LAYOUT ==================
+***************************************************/
+
+body{
+    width: 100%;
+    min-width:320px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+h2,h3{
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+input{
+    display:block;
+    margin: 0.6em auto 0.4em;
+    padding: 0.7em 0.50em;
+}
+input[type="submit"]{
+    background-color: #697fbf;
+    border: none;
+    color: white;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/********************************************
+============= NAV STYLES ===================
+*********************************************/
+
+header{
+    background-color: black;
+}
+nav ul{
+    margin: 0 auto;
+    padding:1.5em 0 1em 0;
+    text-align: center;
+}
+nav li{
+    display: inline-block;
+    padding: .5em;
+}
+nav li a{
+    color:#d9dede;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+}
+.logo{
+    background-image: url(../images/allure_logo_white.png);
+    width: 129px;
+    height: 54px;
+    position: relative;
+    top: 0.5em;
+    left: 1em;
+}
+.logo a{
+    text-indent: -9999999px;
+    display: block;
+}
+.login a{
+    color: #ff8659;
+}
+
+
+/**************************************
+=============== FOOTER STYLE ============
+*****************************************/
+
+footer{
+    background-color: black;
+    color:#d9dede;
+}

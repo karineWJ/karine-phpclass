@@ -114,7 +114,7 @@ elseif( $_COOKIE['loggedin'] == true){
 			<input type="submit" value="Log In">
 			<input type="hidden" name="did_login" value="true">
 		</form>
-		<p>Don't have an account?<a href="#">Sign up</a></p>
+		<p>Don't have an account?<a href="register.php">Sign up</a></p>
 		
 	</div>
 

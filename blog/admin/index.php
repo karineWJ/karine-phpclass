@@ -1,4 +1,5 @@
 <?php require('admin-header.php'); ?>
+
 <main>
 	<section>
 		<h1>Stats</h1>
@@ -10,4 +11,5 @@
 		</ul>
 	</section>
 </main>
+
 <?php include('admin-footer.php'); ?>

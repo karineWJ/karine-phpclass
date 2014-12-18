@@ -105,7 +105,7 @@ if($_POST['did_register']){
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Allure Login Form</title>
+	<title>Allure Sign Up for an Account</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
