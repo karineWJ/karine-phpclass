@@ -113,7 +113,7 @@ function count_user_post_comments( $user, $db){
  */
 function user_badge( $user, $db ){
 	//get the user's name, profile pic, admin status
-	$query = "SELECT username, userpic, is_admin
+	$query = "SELECT username, profilepic, is_admin
 			  FROM users
 			  WHERE user_id = $user
 			  LIMIT 1";
@@ -123,8 +123,8 @@ function user_badge( $user, $db ){
 	if($result->num_rows == 1 ){
 		$row = $result->fetch_assoc();
 
-		if( $row['userpic'] ){
-			$image = $row['userpic'];
+		if( $row['profilepic'] ){
+			$image = $row['profilepic'];
 		}else{
 			//document root is htdocs
 			$image = 'http://localhost/karine-phpclass/blog/images/default-avatar.png';
@@ -135,8 +135,7 @@ function user_badge( $user, $db ){
 		<div class="user-badge">
 			<img src="<?php echo $image; ?>" class="user-pic">
 			<div class="user-name"><?php echo $row['username']; ?></div>
-			<div class="user-role"><?php echo $row['is_admin'] == 1 ? 'Administrator' : 'Commentor';
-			// this ask whether user is an admin. If yes, it will write administrator, and if not it will write commentor ?>
+
 			</div> 
 		</div>
 		<?php

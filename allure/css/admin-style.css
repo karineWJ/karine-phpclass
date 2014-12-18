@@ -101,7 +101,7 @@ input[type="submit"]{
 ============= NAV STYLES ===================
 *********************************************/
 
-header{
+header .container {
     background-color: black;
 }
 nav ul{
@@ -133,6 +133,25 @@ nav li a{
 .login a{
     color: #ff8659;
 }
+
+/************************************
+========== UTILITIES STYLES ==========
+************************************/
+.utilities{
+    float: right;
+}
+.utilities li {
+    margin: 0;
+    padding: 0;
+    margin: 0 5px 0 0;
+    color:#d9dede;
+ }
+
+.utilities a,
+.user-name{
+    text-decoration: none;
+    color:#d9dede;
+ }
 
 
 /**************************************

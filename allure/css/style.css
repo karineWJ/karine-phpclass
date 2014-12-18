@@ -101,7 +101,7 @@ input[type="submit"]{
 ============= NAV STYLES ===================
 *********************************************/
 
-header{
+header .container{
     background-color: black;
 }
 nav ul{

@@ -36,10 +36,14 @@ $user_id = $_SESSION['user_id'];
 				</ul>
 			</nav>
 
+			<?php user_badge( $user_id, $db ); ?>
+
 			<ul class="utilities">
 				<li><a href="#">Account Settings</a></li>
 				<li><a href="login.php?action=logout">Log Out</a></li>
 			</ul>
 
+			
 		</div>
+
 	</header>
