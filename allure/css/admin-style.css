@@ -73,7 +73,6 @@ h2,h3{
 }
 
 ul{
-    margin: 0;
     padding: 0;
 }
 li{
@@ -103,6 +102,7 @@ input[type="submit"]{
 
 header .container {
     background-color: black;
+    position: relative;
 }
 nav ul{
     margin: 0 auto;
@@ -137,21 +137,49 @@ nav li a{
 /************************************
 ========== UTILITIES STYLES ==========
 ************************************/
-.utilities{
-    float: right;
+/*.utilities{
+    position:absolute;
+    top: 0px;
+    right: 10px;
 }
 .utilities li {
     margin: 0;
-    padding: 0;
+    padding: .3em 0;
     margin: 0 5px 0 0;
     color:#d9dede;
- }
+ }*/
+
 
 .utilities a,
 .user-name{
     text-decoration: none;
     color:#d9dede;
  }
+
+ /*.user-name{
+    float:right;
+ }
+
+.user-badge{
+    position:absolute;
+    top: 20px;
+    right: 120px;
+    color: #d9dede;
+}
+*/
+
+.user-pic{
+    float:left;
+    width:35px;
+    height:auto;
+    margin-right: .5em;
+}
+
+/**************************************
+=============== MAIN STYLE ============
+*****************************************/
+
+
 
 
 /**************************************
@@ -161,4 +189,37 @@ nav li a{
 footer{
     background-color: black;
     color:#d9dede;
+    position: relative;
+    font-size: 0.9em;
+    clear:both;
+}
+p.copyright{
+    float:left;
+    padding-left: 0.75em;
+}
+.footer-nav{
+    float: right;
+}
+.footer-nav ul{
+   margin: 1em;
+}
+.footer-nav li{
+    display: inline-block;
+    padding:0 0.5em;
+}
+
+
+/**************************************
+=============== MEDIA QUERIES ============
+*****************************************/
+
+@media only screen and (min-width : 600px) {
+    #sidebar{
+        float: left;
+        width: 25%;
+    }
+    #all-photos{
+        float:right;
+        width:75%;
+    }
 }

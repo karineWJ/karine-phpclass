@@ -23,11 +23,13 @@ $user_id = $_SESSION['user_id'];
 	<title>Admin Panel - Profile Page</title>
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin-style.css">
+	<link rel="stylesheet" type="text/css" href="../css/fontello.css">
 </head>
 <body>
 	<header>
 		<div class="container">
 			<h1 class="logo"><a href="index.php">Allure</a></h1>
+
 			<nav id="home-nav">
 				<ul>
 					<li><a href="#">Explore</a></li>
@@ -36,14 +38,14 @@ $user_id = $_SESSION['user_id'];
 				</ul>
 			</nav>
 
-			<?php user_badge( $user_id, $db ); ?>
-
-			<ul class="utilities">
+			
+			<!--	<ul class="utilities">
 				<li><a href="#">Account Settings</a></li>
 				<li><a href="login.php?action=logout">Log Out</a></li>
-			</ul>
+			</ul> -->
 
-			
+			<?php user_badge( $user_id, $db ); ?>
+
 		</div>
 
 	</header>

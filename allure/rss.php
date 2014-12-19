@@ -18,9 +18,22 @@ require('includes/config.php');
 				  LIMIT 10";
 		$result = $db->query($query);
 
-			//ADD WHILE LOOP CODE HERE 
-
+		if( $result->num_rows >= 1 ){
+			while( $row = $result->fetch_assoc() ){
 		 ?>
+
+		 <item>
+			<title><?php echo $row['description']; ?></title>
+			<link>http://localhost/karine-phpclass/allure/single-post.php?photo_id=<?php echo $row['photo_id']; ?></link>
+			<guid>http://localhost/karine-phpclass/allure/single-post.php?photo_id=<?php echo $row['photo_id']; ?></guid>
+			<description><![CDATA[ <img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link'] ?>"> ]]></description>
+			<author><?php echo $row['username']; ?></author>
+			<pubDate><?php echo $row['date']; ?></pubDate>
+		</item>
+
+		<?php 
+			} //end while
+		} //end if ?>
 
 	</channel>
 

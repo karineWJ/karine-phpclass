@@ -2,7 +2,7 @@
 	<main>
 		<section id="home-banner">
 			<h1 id="header-title">Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</h1>
-			<a href="#" class="sign-up">Get Started</a>
+			<a href="admin/register.php" class="sign-up">Get Started</a>
 		</section>
 		
 		<div id="home-SecondNav">

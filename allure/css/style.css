@@ -73,7 +73,6 @@ h2,h3{
 }
 
 ul{
-    margin: 0;
     padding: 0;
 }
 li{
@@ -198,6 +197,7 @@ nav li a{
 #home-SecondNav ul{
     background-color: #d9dede;
     width: 100%;
+    margin: 0;
 }
 #home-SecondNav ul li{
     display: inline-block;
@@ -210,12 +210,15 @@ nav li a{
     color: #696969;
     letter-spacing: 1px;
 }
-#discover{
+#discover,
+#about{
     text-align: center;
 }
-#discover article{
+#discover article,
+#about article{
     margin-top: 3em;
     margin-bottom: 3em;
+    padding: 0 0.8em;
 }
 
 /**************************************
@@ -225,9 +228,24 @@ nav li a{
 footer{
     background-color: black;
     color:#d9dede;
+    position: relative;
+    font-size: 0.9em;
 }
 
-
+p.copyright{
+    float:left;
+    padding-left: 0.75em;
+}
+.footer-nav{
+    float: right;
+}
+.footer-nav ul{
+   margin: 1em;
+}
+.footer-nav li{
+    display: inline-block;
+    padding:0 0.5em;
+}
 
 
 

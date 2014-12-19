@@ -134,10 +134,19 @@ function user_badge( $user, $db ){
 		?>
 		<div class="user-badge">
 			<img src="<?php echo $image; ?>" class="user-pic">
-			<div class="user-name"><?php echo $row['username']; ?></div>
+			
+			<div id="dropdown" class="user-name">
+				<a href="#"><?php echo $row['username']; ?>
+					<ul class="utilities">
+						<li><a href="#">Account Settings</a></li>
+						<li><a href="login.php?action=logout">Log Out</a></li>
+					</ul>
+				</a>
+			</div>
 
-			</div> 
-		</div>
+		</div> 
+
+	</div>
 		<?php
 	}//end if 
 

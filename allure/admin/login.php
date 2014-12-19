@@ -18,10 +18,10 @@ if( $_POST['did_login'] == true ){
 	if( strlen($username) <= 50 && strlen($username) >= 3 && strlen($password) >= 5 ){
 	//check to see if these credentials exist in the DB
 		$query = "SELECT user_id
-				  FROM users
-				  WHERE username = '$username'
-				  AND password = '$hashed_password' 
-				  LIMIT 1";
+		FROM users
+		WHERE username = '$username'
+		AND password = '$hashed_password' 
+		LIMIT 1";
 
 		//run it
 		$result = $db->query($query);
@@ -52,19 +52,21 @@ if( $_POST['did_login'] == true ){
 	}
 }//end if did login
 
-// Note: This will destroy the session, and not just the session data!
-//Got this code from php.net
-if (ini_get("session.use_cookies")) {
-	//remove the session_id cookie from the user's computer
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
-    );
-}
+
+
 
 //check to see if the cookie is still valid, if so, re-build the session
 if( $_GET['action'] == 'logout'){
+// Note: This will destroy the session, and not just the session data!
+//Got this code from php.net
+	if (ini_get("session.use_cookies")) {
+	//remove the session_id cookie from the user's computer
+		$params = session_get_cookie_params();
+		setcookie(session_name(), '', time() - 42000,
+			$params["path"], $params["domain"],
+			$params["secure"], $params["httponly"]
+			);
+	}
 	//remove all session and cookie vars
 	session_destroy(); //deletes session ID
 	//remove all the session to null
@@ -94,6 +96,7 @@ elseif( $_COOKIE['loggedin'] == true){
 </head>
 
 <body>
+	
 	<div id="login-container">
 		<img src="../images/allure_logo_black.png" alt="Logo">
 		<h1>Log In to Your Account</h1>

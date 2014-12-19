@@ -7,17 +7,23 @@
 
 <?php include('admin-sidebar.php'); ?>
 
-<main class="cf">
+<main id="all-photos" class="cf">
+
 	<section>
-		<h1>Stats</h1>
+		<h1><?php echo $username; ?> Profile</h1>
 
 		<ul>
 			<li>You have NUMBER boards</li>
 			<li>You have NUMBER uploaded</li>
-			<li>You have NUMBER saved images</li>
 			<li>You have NUMBER likes</li>
 		</ul>
 	</section>
+
+	<section>
+
+	</section>
+
+
 </main>
 
 <?php include('admin-footer.php'); ?>
