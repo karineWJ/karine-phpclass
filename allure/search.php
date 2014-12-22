@@ -9,7 +9,7 @@ $page_number = 1; //default current starting page
 	<?php 
 	$phrase = $_GET['phrase'];
 
-	//look up all photos that have that phrase in the description, tags 
+	//look up all photos that have that phrase in the description, tags. 
 	//ADD TAGS TITLE LATER
 	$query = "SELECT description, photo_id, photo_link
 			  FROM photos
@@ -51,7 +51,6 @@ $page_number = 1; //default current starting page
 			<a href="#"><img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link'] ?>"></a>
 			<P>PHOTO TAGS</P>
 			<p>LIKES</p>
-			<p>Added by: USERNAME</p>
 		</article>
 		<?php }//end while ?>
 	</section>

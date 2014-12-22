@@ -29,22 +29,22 @@ $user_id = $_SESSION['user_id'];
 	<header>
 		<div class="container">
 			<h1 class="logo"><a href="index.php">Allure</a></h1>
-
-			<nav id="home-nav">
+			
+			<nav id="home-nav" class="cf">
 				<ul>
 					<li><a href="#">Explore</a></li>
 					<li><a href="#">Upload an Image</a></li>
 					<li><a href="#">Add Board</a></li>
 				</ul>
 			</nav>
-
+			<?php user_badge( $user_id, $db ); ?>
 			
-			<!--	<ul class="utilities">
+			<ul class="utilities">
 				<li><a href="#">Account Settings</a></li>
 				<li><a href="login.php?action=logout">Log Out</a></li>
-			</ul> -->
-
-			<?php user_badge( $user_id, $db ); ?>
+			</ul>
+			
+			
 
 		</div>
 

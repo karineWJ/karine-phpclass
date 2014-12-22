@@ -73,7 +73,7 @@ if($_POST['did_register']){
 		$query_newuser = "INSERT INTO users
 						 (username, is_admin, email, password, date_joined)
 						 VALUES
-						 ( '$username', 0, '$email', '$hashed_password', now() )"; //put quotes if field is varchar
+						 ( '$username', 1, '$email', '$hashed_password', now() )"; //put quotes if field is varchar
 	
 		$result_newuser = $db->query($query_newuser);
 
@@ -111,7 +111,7 @@ if($_POST['did_register']){
 
 <body>
 	<div id="register-container">
-		<img src="../images/allure_logo_black.png" alt="Logo">
+		<a href="../index.php"><img src="../images/allure_logo_black.png" alt="Logo"></a>
 		<h1>Create an account</h1>
 
 		<?php //if there are errors, show them
@@ -130,7 +130,7 @@ if($_POST['did_register']){
 
 			<label>
 			<input type="checkbox" name="policy" value="1" id="policy" <?php if($policy){echo 'checked';} ?>>
-			By creating an account, I agree to the <a href="#">terms and conditions.</a>
+			By creating an account, I agree to the <a href="../policy.php">terms and conditions.</a>
 			</label>
 
 			<input type="submit" value="Create account">

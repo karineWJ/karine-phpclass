@@ -98,7 +98,7 @@ elseif( $_COOKIE['loggedin'] == true){
 <body>
 	
 	<div id="login-container">
-		<img src="../images/allure_logo_black.png" alt="Logo">
+		<a href="../index.php"><img src="../images/allure_logo_black.png" alt="Logo"></a>
 		<h1>Log In to Your Account</h1>
 
 		<?php echo $message; ?>
@@ -109,7 +109,7 @@ elseif( $_COOKIE['loggedin'] == true){
 
 			<input type="password" name="password" id="password" placeholder="Password">
 
-			<a href="#" >Forgot Password?</a>
+			<a href="#" class="forgot-pass">Forgot Password?</a>
 
 			<input type="checkbox" name="remember" id="remember" value="remember">
 			<label for="remember">Remember me</label>
@@ -117,7 +117,7 @@ elseif( $_COOKIE['loggedin'] == true){
 			<input type="submit" value="Log In">
 			<input type="hidden" name="did_login" value="true">
 		</form>
-		<p>Don't have an account?<a href="register.php">Sign up</a></p>
+		<p>Don't have an account? <a href="register.php" class="signup-link">Sign up</a></p>
 		
 	</div>
 

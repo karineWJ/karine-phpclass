@@ -136,17 +136,12 @@ function user_badge( $user, $db ){
 			<img src="<?php echo $image; ?>" class="user-pic">
 			
 			<div id="dropdown" class="user-name">
-				<a href="#"><?php echo $row['username']; ?>
-					<ul class="utilities">
-						<li><a href="#">Account Settings</a></li>
-						<li><a href="login.php?action=logout">Log Out</a></li>
-					</ul>
-				</a>
+				<a href="#"><?php echo $row['username']; ?></a>
 			</div>
 
 		</div> 
 
-	</div>
+	
 		<?php
 	}//end if 
 

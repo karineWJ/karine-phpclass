@@ -1,6 +1,6 @@
  <?php 
 //connect to DB
-require('config.php');
+require('includes/config.php');
 require_once('includes/functions.php');
 ?>
 <!DOCTYPE html>
@@ -17,9 +17,11 @@ require_once('includes/functions.php');
 	<header>
 		<div class="container">
 			<h1 class="logo"><a href="index.php">Allure</a></h1>
-			<nav id="home-nav">
+			
+			<a href="admin/login.php" class="login">Login</a>
+
+			<nav id="home-nav" class="cf">
 				<ul>
-					<li class="login"><a href="admin/login.php" >Login</a></li>
 					<li><a href="#">Explore</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="#">How it works</a></li>

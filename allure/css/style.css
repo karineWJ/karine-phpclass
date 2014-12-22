@@ -65,23 +65,33 @@ h1{
     margin: 0;
     font-weight: normal;
     text-transform: uppercase;
+    text-align: center;
 }
 
 h2,h3{
     font-weight: 400;
     text-transform: uppercase;
 }
-
+h3{
+    font-size: 1em;
+}
 ul{
     padding: 0;
 }
 li{
     list-style-type: none;
+    font-size: .95em;
+    line-height: 1.2em;
 }
 a{
     text-decoration: none;
 }
 
+p{
+    font-size: .95em;
+    line-height: 1.2em;
+    padding: 0 1em;
+}
 input{
     display:block;
     margin: 0.6em auto 0.4em;
@@ -96,12 +106,17 @@ input[type="submit"]{
     cursor: pointer;
 }
 
+
 /********************************************
 ============= NAV STYLES ===================
 *********************************************/
 
 header .container{
+    position: relative;
     background-color: black;
+}
+nav{
+    clear:both;
 }
 nav ul{
     margin: 0 auto;
@@ -124,13 +139,20 @@ nav li a{
     position: relative;
     top: 0.5em;
     left: 1em;
+    float:left;
 }
 .logo a{
     text-indent: -9999999px;
     display: block;
 }
-.login a{
+.login {
     color: #ff8659;
+    text-transform: uppercase;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+    margin-right: 20px;
+    margin-top: 40px;
+    float: right;
 }
 
 /**********************************
@@ -142,26 +164,36 @@ nav li a{
     width: 315px;
     margin: 2em auto 0;
     border-top: solid 10px black;    
-    text-align: center;
 }
+
 #login-container h1,
 #register-container h1{
     padding: 1em 0;
     font-size: 1.2em;
-
 }
 
 #login-container img,
 #register-container img{
     margin-top: 2em;
+    margin-left:4em;
 }
-
+#login-container p{
+    text-align: center;
+    margin-top: 2em;
+}
 #login-form input,
 #register-form input{
     width: 280px;
 }
-
-
+.forgot-pass{
+   font-size: 0.8em;
+   color: #697fbf;
+   padding-left: 1.4em;
+}
+.signup-link{
+    color: #697fbf;
+    text-decoration: underline;
+}
 /******************************************
 ================== MAIN STYLE ================
 *********************************************/
@@ -174,7 +206,7 @@ nav li a{
 #home-banner h1{
     width: 75%;
     margin: 0 auto;
-    padding: 3em 0 2em;
+    padding: 2em 0 1.6em;
 }
 
 #header-title{
@@ -191,8 +223,14 @@ nav li a{
     padding: 0.8em;
 }
 
+.sign-up:hover{
+    background-color: #516AB5;
+}
 #home-SecondNav{
     text-align: center;
+}
+#home-SecondNav li:hover{
+    background-color: #EBEDED;
 }
 #home-SecondNav ul{
     background-color: #d9dede;
@@ -201,7 +239,7 @@ nav li a{
 }
 #home-SecondNav ul li{
     display: inline-block;
-    width: 32%;
+    width: 33.3%;
     padding: 0.8em 0;
 }
 #home-SecondNav ul li a{
@@ -211,14 +249,38 @@ nav li a{
     letter-spacing: 1px;
 }
 #discover,
-#about{
+#about,
+#testimonials,
+#register-reminder,
+#share,
+#follow{
     text-align: center;
+}
+#register-reminder{
+    margin-top: 2.5em;
+    margin-bottom: 2em;
+}
+#register-reminder h2{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    padding: 1.5em .75em;
 }
 #discover article,
 #about article{
     margin-top: 3em;
     margin-bottom: 3em;
     padding: 0 0.8em;
+}
+#policy{
+        padding: 0.25em 1em;
+}
+.main-title{
+    padding: 1.4em 0 1em;
+}
+
+ul.policy-list li{
+    margin: .5em;
+    list-style-type: circle;
 }
 
 /**************************************
@@ -248,7 +310,57 @@ p.copyright{
 }
 
 
+/**********************************
+=========== MEDIA QUERIES ============
+************************************/
 
-
+@media only screen and (min-width:550px){
+   header{
+    background-color: black;
+   }
+   .container{
+        width: 535px;
+        margin: 0 auto;
+   }
+    /*nav ul {
+        position:relative;
+        top:-49px;
+        right: -55px;
+    }*/
+   
+    #share img{
+        float:left;
+        width: 30%;
+        padding: 0.5em;
+    }
+    #share article{
+        float:right;
+        width: 70%;
+        text-align: left;
+        padding: 0 1em;
+    }
+    #follow{
+        clear:both;
+    }
+    #follow img{
+        float: right;
+        width: 30%;
+        padding: 0.5em;
+    }
+     #follow article{
+        float:left;
+        width: 70%;
+        text-align: left;
+        padding: 0 1em;
+    }
+    #testimonials h2{
+        padding: 2em 0;
+    }
+    .magazine{
+        display:inline-block;
+        width:48%;
+        padding: 1em 0;
+    }
+}
 
 

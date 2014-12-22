@@ -104,6 +104,9 @@ header .container {
     background-color: black;
     position: relative;
 }
+nav{
+    clear:both;
+}
 nav ul{
     margin: 0 auto;
     padding:1.5em 0 1em 0;
@@ -125,19 +128,18 @@ nav li a{
     position: relative;
     top: 0.5em;
     left: 1em;
+    float:left;
 }
 .logo a{
     text-indent: -9999999px;
     display: block;
 }
-.login a{
-    color: #ff8659;
-}
+
 
 /************************************
 ========== UTILITIES STYLES ==========
 ************************************/
-/*.utilities{
+.utilities{
     position:absolute;
     top: 0px;
     right: 10px;
@@ -147,7 +149,7 @@ nav li a{
     padding: .3em 0;
     margin: 0 5px 0 0;
     color:#d9dede;
- }*/
+ }
 
 
 .utilities a,
@@ -156,7 +158,7 @@ nav li a{
     color:#d9dede;
  }
 
- /*.user-name{
+.user-name{
     float:right;
  }
 
@@ -166,7 +168,7 @@ nav li a{
     right: 120px;
     color: #d9dede;
 }
-*/
+
 
 .user-pic{
     float:left;
