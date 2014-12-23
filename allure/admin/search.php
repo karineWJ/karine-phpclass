@@ -1,4 +1,4 @@
-<?php require('includes/header.php');
+<?php require('admin-header.php');
 //search configuration
 $per_page = 10; //number of photos per page
 $page_number = 1; //default current starting page
@@ -47,7 +47,7 @@ $page_number = 1; //default current starting page
 	<section class="search-results">
 
 		<?php while( $row = $result_modified->fetch_assoc() ){ ?>
-		<article>
+		<article class="photo-box">
 			<a href="#"><img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link'] ?>"></a>
 			<P>PHOTO TAGS</P>
 			<p>LIKES</p>
@@ -83,5 +83,5 @@ $page_number = 1; //default current starting page
 
 </main>
 
-<?php include('includes/footer.php'); ?>
+<?php include('admin-footer.php'); ?>
 	

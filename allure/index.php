@@ -1,6 +1,6 @@
 <?php require('includes/header.php'); ?>
 	<main>
-		<div class="container">
+	
 		<section id="home-banner">
 			<h1 id="header-title">Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</h1>
 			<a href="admin/register.php" class="sign-up">Get Started</a>
@@ -74,7 +74,7 @@
 			<h2>become an inspiring Allure fashionista and show your style to the world</h2>
 			<a href="admin/register.php" class="sign-up">Join Now</a>
 		</section>
-		</div>
+		
 	</main>
 
 <?php include('includes/footer.php'); ?>

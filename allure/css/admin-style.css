@@ -180,8 +180,16 @@ nav li a{
 /**************************************
 =============== MAIN STYLE ============
 *****************************************/
-
-
+#searchform{
+    margin: 0 auto;
+    width: 315px;
+}
+#searchform input[type="search"]{
+    
+}
+#searchform input{
+    display: inline-block;
+}
 
 
 /**************************************
