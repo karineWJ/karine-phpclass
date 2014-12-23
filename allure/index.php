@@ -43,12 +43,13 @@
 			</article>
 		</section>
 
-		<section id="follow" class="cf">	
+		<section id="follow" class="cf">
+			<img src="https://placeimg.com/200/190/arch">	
 			<article>
 				<h3>Follow those who inspire you</h3>
 				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
 			</article>
-			<img src="https://placeimg.com/200/190/arch">
+			
 		</section>
 
 		<section id="testimonials" class="cf">

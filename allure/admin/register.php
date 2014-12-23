@@ -128,10 +128,11 @@ if($_POST['did_register']){
 
 			<input type="password" name="password" id="password" placeholder="Password">
 
-			<label>
-			<input type="checkbox" name="policy" value="1" id="policy" <?php if($policy){echo 'checked';} ?>>
-			By creating an account, I agree to the <a href="../policy.php">terms and conditions.</a>
-			</label>
+			<fieldset id="policy">
+				<input type="checkbox" name="policy" value="1" <?php if($policy){echo 'checked';} ?> >
+				<label>By creating an account, I agree to the <a href="../policy.php" class="terms-condition">terms and conditions.</a>
+				</label>
+			</fieldset>
 
 			<input type="submit" value="Create account">
 			<input type="hidden" name="did_register" value="true">

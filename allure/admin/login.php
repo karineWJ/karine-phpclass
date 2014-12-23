@@ -110,10 +110,11 @@ elseif( $_COOKIE['loggedin'] == true){
 			<input type="password" name="password" id="password" placeholder="Password">
 
 			<a href="#" class="forgot-pass">Forgot Password?</a>
-
-			<input type="checkbox" name="remember" id="remember" value="remember">
-			<label for="remember">Remember me</label>
-
+			
+			<fieldset id="remember">
+				<input type="checkbox" name="remember" value="remember">
+				<label for="remember">Remember me</label>
+			</fieldset>
 			<input type="submit" value="Log In">
 			<input type="hidden" name="did_login" value="true">
 		</form>

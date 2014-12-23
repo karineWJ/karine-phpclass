@@ -72,8 +72,10 @@ h2,h3{
     font-weight: 400;
     text-transform: uppercase;
 }
+
 h3{
     font-size: 1em;
+    margin-bottom: 1.4em;
 }
 ul{
     padding: 0;
@@ -104,6 +106,7 @@ input[type="submit"]{
     font-family: 'dolce_vitaquite_regular';
     letter-spacing: 1px;
     cursor: pointer;
+    padding: 1.1em 0;
 }
 
 
@@ -186,13 +189,48 @@ nav li a{
     width: 280px;
 }
 .forgot-pass{
-   font-size: 0.8em;
+   font-size: 0.85em;
    color: #697fbf;
    padding-left: 1.4em;
+   float:right;
+   padding-right: 6%;
+   margin-top: .7em;
 }
-.signup-link{
+.signup-link,
+.terms-condition{
     color: #697fbf;
     text-decoration: underline;
+}
+#remember,
+#policy{
+    border:none;
+}
+#policy{
+    margin: 1em 0 1.8em;
+}
+#remember input[type="checkbox"],
+#policy input[type="checkbox"]{
+    float:left;
+    padding-left:2em;
+    width: 22px;
+}
+#remember label,
+#policy label{
+    font-size: 0.9em;
+    position:relative;
+    top:.2em;
+}
+input::-webkit-input-placeholder{
+    font-size: 1.15em;
+}
+input::-moz-placeholder{
+    font-size: 1.15em;
+}
+input:-ms-input-placeholder{
+    font-size: 1.15em;
+}
+input:-moz-placeholder{
+    font-size:1.15em;
 }
 /******************************************
 ================== MAIN STYLE ================
@@ -230,10 +268,10 @@ nav li a{
     text-align: center;
 }
 #home-SecondNav li:hover{
-    background-color: #EBEDED;
+    background-color: #e4ebeb;
 }
 #home-SecondNav ul{
-    background-color: #d9dede;
+    background-color: #f2f5f5;
     width: 100%;
     margin: 0;
 }
@@ -245,9 +283,10 @@ nav li a{
 #home-SecondNav ul li a{
     font-family: 'dolce_vitaquite_regular';
     font-size: 1.3em;
-    color: #696969;
+    color: #8e8e8e;
     letter-spacing: 1px;
 }
+
 #discover,
 #about,
 #testimonials,
@@ -256,9 +295,13 @@ nav li a{
 #follow{
     text-align: center;
 }
+#testimonials,
+#discover h2{
+    margin-top: 2em;
+}
 #register-reminder{
     margin-top: 2.5em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 #register-reminder h2{
     font-size: 1.2em;
@@ -281,6 +324,15 @@ nav li a{
 ul.policy-list li{
     margin: .5em;
     list-style-type: circle;
+}
+#testimonials{
+    background-image: url(../images/p6.png);
+    padding-top: 2em;
+    padding-bottom: 3em;
+}
+.magazine{
+    margin-top:2.5em;
+    padding: 0 1.4em;
 }
 
 /**************************************
@@ -330,12 +382,12 @@ p.copyright{
    
     #share img{
         float:left;
-        width: 30%;
+        width: 35%;
         padding: 0.5em;
     }
     #share article{
         float:right;
-        width: 70%;
+        width: 65%;
         text-align: left;
         padding: 0 1em;
     }
@@ -344,12 +396,12 @@ p.copyright{
     }
     #follow img{
         float: right;
-        width: 30%;
+        width: 35%;
         padding: 0.5em;
     }
      #follow article{
         float:left;
-        width: 70%;
+        width: 65%;
         text-align: left;
         padding: 0 1em;
     }
@@ -362,5 +414,13 @@ p.copyright{
         padding: 1em 0;
     }
 }
-
+@media only screen and (min-width:750px){
+    .container{
+        width:740px;
+    }
+    #discover article{
+        display: inline-block;
+        width:32%;
+    }
+}
 
