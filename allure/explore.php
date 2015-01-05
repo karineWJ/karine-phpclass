@@ -1,24 +1,30 @@
-<?php require('admin-header.php');
-//search configuration
-$per_page = 10; //number of photos per page
-$page_number = 1; //default current starting page
+<!-- <?php  //if logged in, show admin-header.php and search form
+//if( $_SESSION['loggedin'] = true ){
 ?>
+<?php //require('admin/admin-header.php'); ?>
+<?php //}else{ ?>
+<?php //require('includes/header.php'); 
+	//explore configuration
+	//$per_page = 16; //number of photos per page
+	// $page_number = 1; //default current starting page
+?> --> 
+ 
+<?php require('includes/header.php');  
+	//explore configuration
+	$per_page = 16; //number of photos per page
+	$page_number = 1; //default current starting page
 
-<main id="result-content">
-	<div class="container">
-
-	<?php 
-	$phrase = $_GET['phrase'];
-
-	//look up all photos that have that phrase in the description and tags. Also add username 
-	$query = "SELECT photos.description, photos.photo_id, photos.photo_link, users.username, tags.title
+?>
+<main>
+	<div id="explore-wrapper" class="container">
+	<?php  // get username, photo_link, photo_id, and tag title. Get most recent photos
+	$query = "SELECT photos.photo_id, photos.photo_link, users.username, tags.title
 			  FROM photos, users, tags, photo_tags
 			  WHERE users.user_id = photos.user_id
 			  AND photos.photo_id = photo_tags.photo_id
 			  AND photo_tags.tag_id = tags.tag_id
-			  AND ( description LIKE '%" . $phrase . "%' 
-			  OR title LIKE '%" . $phrase . "%' ) ";
-			 // need to concatenate $phrase because php will take single quotes literally
+			  ORDER BY photos.date DESC";
+
 	$result = $db->query($query);
 	//check to see if rows were found
 	if( $result->num_rows >= 1 ){
@@ -42,26 +48,16 @@ $page_number = 1; //default current starting page
 			$result_modified = $db->query($query_modified);
 	?>
 
-	<form action="search.php" method="get" id="searchform">
-		<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
-	</form>
-	
-	<h1>Search Results</h1>
-	<p class="success message">
-	<?php echo $totalposts; ?> results found for '<?php echo $phrase; ?>'. 
-	Showing page <?php echo $page_number; ?> of <?php echo $max_page; ?>. </p>
 
-	<section class="search-results">
-
-		<?php while( $row = $result_modified->fetch_assoc() ){ ?>
+	<?php while( $row = $result_modified->fetch_assoc() ){ ?>
 		<article class="photo-container">
 			<a href="#"><img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link']; ?>" class="photo"></a>
 			<p>Added by <a href="#" class="username"><?php echo $row['username']; ?></a></p>
-			<P>Tags: <a href="#" class="tag"><?php echo $row['title']; ?></a></P>
+			<P>Tags: <a href="#" class="tag"><?php echo $row['title'] ?></a></P>
 			<div class="likes"><i class="icon-heart"></i>NUMBER OF LIKES</div>
 		</article>
 		<?php }//end while ?>
-	</section>
+
 
 	<?php 
 	$prev_page = $page_number - 1;
@@ -91,5 +87,5 @@ $page_number = 1; //default current starting page
 	</div>
 </main>
 
-<?php include('admin-footer.php'); ?>
+<?php include('includes/footer.php'); ?>
 	

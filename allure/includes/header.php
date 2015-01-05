@@ -18,11 +18,11 @@ require_once('includes/functions.php');
 		<div class="container">
 			<h1 class="logo"><a href="index.php">Allure</a></h1>
 			
-			<a href="admin/login.php" class="login">Login</a>
+			<a href="admin/login.php" class="navigation login">Login</a>
 
-			<nav id="home-nav" class="cf">
+			<nav id="home-nav" class="navigation cf">
 				<ul>
-					<li><a href="#">Explore</a></li>
+					<li><a href="explore.php">Explore</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="#">How it works</a></li>
 				</ul>

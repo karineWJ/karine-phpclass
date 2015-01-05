@@ -59,7 +59,9 @@ body{
     font-family: 'Quattrocento Sans', sans-serif;
     margin: 0 auto;
 }
-
+header{
+    background-color: black;
+}
 h1{
     font-size: 1.5em;
     margin: 0;
@@ -90,8 +92,8 @@ a{
 }
 
 p{
-    font-size: .95em;
-    line-height: 1.2em;
+    font-size: 1em;
+    line-height: 1.45em;
     padding: 0 1em;
 }
 input{
@@ -108,15 +110,15 @@ input[type="submit"]{
     cursor: pointer;
     padding: 1.1em 0;
 }
-
-
+input[type="submit"]:hover{
+    background-color: #516AB5;
+}
 /********************************************
 ============= NAV STYLES ===================
 *********************************************/
 
 header .container{
     position: relative;
-    background-color: black;
 }
 nav{
     clear:both;
@@ -125,30 +127,34 @@ nav ul{
     margin: 0 auto;
     padding:1.5em 0 1em 0;
     text-align: center;
+    width:300px;
 }
 nav li{
     display: inline-block;
     padding: .5em;
 }
 nav li a{
-    color:#d9dede;
+    color: #d9dede;
     font-family: 'dolce_vitaquite_regular';
     letter-spacing: 1px;
 }
+nav li a:hover{
+    color: #828b8b;
+}
 .logo{
     background-image: url(../images/allure_logo_white.png);
-    width: 129px;
-    height: 54px;
+    width: 161px;
+    height: 63px;
     position: relative;
     top: 0.5em;
-    left: 1em;
+    left: .55em;
     float:left;
 }
 .logo a{
     text-indent: -9999999px;
     display: block;
 }
-.login {
+.login{
     color: #ff8659;
     text-transform: uppercase;
     font-family: 'dolce_vitaquite_regular';
@@ -156,6 +162,9 @@ nav li a{
     margin-right: 20px;
     margin-top: 40px;
     float: right;
+}
+.login:hover{
+    color: #be6443;
 }
 
 /**********************************
@@ -188,6 +197,7 @@ nav li a{
 #register-form input{
     width: 280px;
 }
+
 .forgot-pass{
    font-size: 0.85em;
    color: #697fbf;
@@ -266,12 +276,12 @@ input:-moz-placeholder{
 }
 #home-SecondNav{
     text-align: center;
+    background-color: #f2f5f5;
 }
 #home-SecondNav li:hover{
     background-color: #e4ebeb;
 }
 #home-SecondNav ul{
-    background-color: #f2f5f5;
     width: 100%;
     margin: 0;
 }
@@ -286,7 +296,16 @@ input:-moz-placeholder{
     color: #8e8e8e;
     letter-spacing: 1px;
 }
-
+.circle{
+    width:35px;
+    height:35px;
+    border-radius:50px;
+    font-size: 1.2em;
+    color:#fff;
+    line-height:2.1em;
+    text-align:center;
+    background:#697fbf;
+}
 #discover,
 #about,
 #testimonials,
@@ -294,6 +313,18 @@ input:-moz-placeholder{
 #share,
 #follow{
     text-align: center;
+}
+.smaller-h2{
+    font-size: 1.2em;
+    padding:0 1.6em;
+}
+#explore-wrapper{
+    margin: 3.5em auto;
+}
+#share,
+#follow{
+    margin-bottom: 1.8em;
+    padding: 1em 0;
 }
 #testimonials,
 #discover h2{
@@ -313,6 +344,13 @@ input:-moz-placeholder{
     margin-top: 3em;
     margin-bottom: 3em;
     padding: 0 0.8em;
+}
+.allure-info{
+    text-align: left;
+}
+#ceo img{
+    width: 70%;
+    margin-bottom: 3em;
 }
 #policy{
         padding: 0.25em 1em;
@@ -334,16 +372,52 @@ ul.policy-list li{
     margin-top:2.5em;
     padding: 0 1.4em;
 }
+.container{
+    width:100%;
+    margin: 0 auto;
+}
+.photo-container{
+    border: solid 1px #d4d4d4;
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+    margin-bottom: .8em;
+}
+.photo{
+    width: 100%;
+    margin: 0 auto;
+}
 
+.photo-container p{
+    padding: .2em 0 .2em .2em;
+    font-size: .85em;
+    margin: 0;
+}
+.username{
+    color: #697fbf;
+}
+.username:hover{
+    color: #516AB5;
+}
+.tag{
+    color: #ff8659;
+}
+.tag:hover{
+    color: #be6443;
+}
+.ceo-info h2{
+    margin-top: 1em;
+}
 /**************************************
 =============== FOOTER STYLE ============
 *****************************************/
 
 footer{
     background-color: black;
-    color:#d9dede;
+    color: #d9dede;
     position: relative;
-    font-size: 0.9em;
+    font-size: 0.85em;
+    clear:both;
 }
 
 p.copyright{
@@ -358,28 +432,29 @@ p.copyright{
 }
 .footer-nav li{
     display: inline-block;
-    padding:0 0.5em;
-}
+    padding:0 0.3em;
 
+}
+.footer-nav li a{
+    color: #d9dede;
+}
+.footer-nav li a:hover{
+    color: #696f6f;
+}
 
 /**********************************
 =========== MEDIA QUERIES ============
 ************************************/
 
 @media only screen and (min-width:550px){
-   header{
-    background-color: black;
-   }
+  
    .container{
-        width: 535px;
+        width: 545px;
         margin: 0 auto;
    }
-    /*nav ul {
-        position:relative;
-        top:-49px;
-        right: -55px;
-    }*/
-   
+   #share{
+    background-color: #eaeaea;
+   }
     #share img{
         float:left;
         width: 35%;
@@ -399,6 +474,10 @@ p.copyright{
         width: 35%;
         padding: 0.5em;
     }
+
+    .smaller-h2{
+        padding-left: .6em;
+    }
      #follow article{
         float:left;
         width: 65%;
@@ -406,21 +485,81 @@ p.copyright{
         padding: 0 1em;
     }
     #testimonials h2{
-        padding: 2em 0;
+        padding: 1em 0;
+        margin-bottom: 0;
+        margin-top: 0;
     }
     .magazine{
         display:inline-block;
         width:48%;
         padding: 1em 0;
+        margin-top: 1.4em;
     }
 }
+
+@media only screen and (min-width:590px){
+    .container{
+        width: 585px;
+     }
+   #home-nav{
+    display: inline;
+   }
+   #home-nav ul{
+    margin-right: 70px;
+    padding-top: 2em;
+   }
+   header{
+    height:100px;
+   }
+   #register-reminder h2{
+        width: 500px;
+        margin:0 auto;
+   }
+    #ceo img{
+        float:left;
+        width:35%;
+    }
+    .ceo-info{
+        float: right;
+        width: 60%;
+    }
+    .ceo-info h2{
+        margin: 0;
+        text-align: left;
+        padding: 0 .6em;
+    }
+}
+
 @media only screen and (min-width:750px){
     .container{
-        width:740px;
+        width:735px;
     }
     #discover article{
         display: inline-block;
         width:32%;
     }
+    #home-nav{
+        left: 100px;
+    }    
+    .magazine{
+        width:32%;
+    }
 }
+
+@media only screen and (min-width:960px){
+    .container{
+        width: 950px;
+    }
+    #about{
+        width: 860px;
+    }
+    .photo-container{
+        width: 24%;
+    }
+    #home-SecondNav ul{
+        width:955px;
+        margin:0 auto;
+    }
+}
+
 

@@ -24,7 +24,43 @@ $user_id = $_SESSION['user_id'];
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/admin-style.css">
 	<link rel="stylesheet" type="text/css" href="../css/fontello.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<script type="text/javascript" >
+		$(document).ready(function(){
+
+			$(".account").click(function(){
+				var X=$(this).attr('id');
+				
+				if(X==1){
+					$(".submenu").hide();
+					$(this).attr('id', '0'); 
+				}else{
+					$(".submenu").show();
+					$(this).attr('id', '1');
+				}
+			});
+
+			//Mouse click on sub menu
+			$(".submenu").mouseup(function(){
+				return false
+			});
+
+			//Mouse click on my account link
+			$(".account").mouseup(function(){
+				return false
+			});
+
+			//Document Click
+			$(document).mouseup(function(){
+				$(".submenu").hide();
+				$(".account").attr('id', '');
+			});
+		});
+	</script>
+
 </head>
+
 <body>
 	<header>
 		<div class="container">
@@ -32,20 +68,18 @@ $user_id = $_SESSION['user_id'];
 			
 			<nav id="home-nav" class="cf">
 				<ul>
-					<li><a href="#">Explore</a></li>
-					<li><a href="#">Upload an Image</a></li>
-					<li><a href="#">Add Board</a></li>
+					<li><a href="../explore.php">Explore</a></li>
+					<li><a href="#" class="coral"><i class="icon-upload"></i>Upload</a></li>
+					<li><a href="#"><i class="icon-plus"></i>Board</a></li>
 				</ul>
 			</nav>
+			
 			<?php user_badge( $user_id, $db ); ?>
 			
-			<ul class="utilities">
+			<!-- <ul class="utilities">
 				<li><a href="#">Account Settings</a></li>
 				<li><a href="login.php?action=logout">Log Out</a></li>
-			</ul>
-			
-			
-
+			</ul> -->
 		</div>
 
 	</header>

@@ -59,7 +59,9 @@ body{
     font-family: 'Quattrocento Sans', sans-serif;
     margin: 0 auto;
 }
-
+header{
+    background-color: black;
+}
 h1{
     font-size: 1.5em;
     margin: 0;
@@ -87,7 +89,8 @@ input{
     margin: 0.6em auto 0.4em;
     padding: 0.7em 0.50em;
 }
-input[type="submit"]{
+input[type="submit"],
+.searchButton{
     background-color: #697fbf;
     border: none;
     color: white;
@@ -95,13 +98,14 @@ input[type="submit"]{
     letter-spacing: 1px;
     cursor: pointer;
 }
-
+input[type="submit"]:hover{
+    background-color: #516AB5;
+}
 /********************************************
 ============= NAV STYLES ===================
 *********************************************/
 
 header .container {
-    background-color: black;
     position: relative;
 }
 nav{
@@ -117,17 +121,21 @@ nav li{
     padding: .5em;
 }
 nav li a{
-    color:#d9dede;
+    color: #d9dede;
     font-family: 'dolce_vitaquite_regular';
     letter-spacing: 1px;
 }
+nav li a:hover,
+a.account:hover{
+    color: #828b8b;
+}
 .logo{
     background-image: url(../images/allure_logo_white.png);
-    width: 129px;
-    height: 54px;
+    width: 161px;
+    height: 63px;
     position: relative;
     top: 0.5em;
-    left: 1em;
+    left: .55em;
     float:left;
 }
 .logo a{
@@ -135,11 +143,20 @@ nav li a{
     display: block;
 }
 
-
+.coral{
+    color: #ff8659;
+}
+.coral:hover{
+    color: #be6443;
+}
+.icon-upload{
+    margin-right: .25em;
+}
 /************************************
 ========== UTILITIES STYLES ==========
 ************************************/
-.utilities{
+
+/*.utilities{
     position:absolute;
     top: 0px;
     right: 10px;
@@ -157,18 +174,19 @@ nav li a{
     text-decoration: none;
     color:#d9dede;
  }
+ */
 
 .user-name{
-    float:right;
+    text-decoration: none;
+    color:#d9dede;
  }
 
 .user-badge{
     position:absolute;
     top: 20px;
-    right: 120px;
+    right: 0px;
     color: #d9dede;
 }
-
 
 .user-pic{
     float:left;
@@ -176,33 +194,246 @@ nav li a{
     height:auto;
     margin-right: .5em;
 }
+.root a{
+     text-decoration: none;
+    color:#d9dede;
+}
+.dropdown{
+    color: #555;
+    margin: 3px -20px 0 0;
+    width: 143px;
+    position: relative;
+    height: 17px;
+    text-align:left;
+}
+.submenu{
+    background: #151515;
+    border: solid 1.5px #333333;
+    position: absolute;
+    top: 50px;
+    left: -40px;
+    z-index: 100;
+    width: 145px;
+    display: none;
+    margin-left: 10px;
+    padding: 0 0 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.submenu:after, .submenu:before {
+    bottom: 100%;
+    left: 52%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.submenu:after {
+    border-bottom-color: #151515;
+    border-width: 10px;
+    margin-left: 30px;
+}
+.submenu:before {
+    border-color: rgba(51,51,51,0);
+    border-bottom-color: #c2e1f5;
+    border-width: 10px;
+    margin-left: 30px;
+}
+.dropdown li a{
+    color: #d9dede;
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: .9em;
+    border-radius:2px;
+}
+.dropdown li a:hover{
+    background: #262626;
+    color: #FFFFFF;
+}
+a.account{
+    color: #555;
+    position: absolute;
+    z-index: 110;
+    display: block;
+    padding: 11px 0 0 20px;
+    height: 28px;
+    width: 93px;
+    margin: 6px 0 0 23px;
+    cursor:pointer;
+    font-family: 'dolce_vitaquite_regular';
+    color: #d9dede;
+    letter-spacing: 1px;
+}
+
+.root{
+    margin:0px;
+    padding: 3px 3px 0 3px;
+}
+
+/*************************************
+=========== SIDEBAR STYLE ============
+*************************************/
+.container{
+    padding: 0 .75em;
+    margin: 0 auto;
+}
+#sidebar .container{
+    padding: 0 .5em;
+}
+}
+.profile-bio{
+    margin: 2.2em auto;
+}
+
+.big-profilepic{
+    float:left;
+    width:100px;
+    height: auto;
+    border: solid 3px #fff;
+    position:relative;
+    outline: solid 1px #bcbcbc; 
+}
+.user-info{
+    float:right;
+    width: 65%;
+    padding-left: .8em;
+}
+.user-info h2{
+    font-size: 0.9em;
+    margin-top: .8em;
+    margin-bottom: .3em;
+}
+.user-info p:first-child{
+    text-transform: uppercase;
+    font-size: .75em;
+}
+.user-info p{
+    font-size: .85em;
+    margin:0;
+}
+.follow-stats{
+    clear:both;
+}
 
 /**************************************
 =============== MAIN STYLE ============
 *****************************************/
-#searchform{
+#result-content .container{
     margin: 0 auto;
-    width: 315px;
 }
-#searchform input[type="search"]{
-    
+#searchform{
+    margin: 1em auto;
+    width: 295px;
+    position: relative;
+}
+
+.searchTerm{
+    padding: .5em;
+    width:225px;
+    cursor: pointer;
+}
+.searchTerm:focus{
+    color: #697fbf;
 }
 #searchform input{
     display: inline-block;
 }
+.searchButton{
+    padding: 0.7em .4em;
+}
+.search-results{
+    padding-left: 2%;
+}
+.photo-container{
+    border: solid 1px #d4d4d4;
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+}
+.photo{
+    width: 100%;
+    margin: 0 auto;
+}
 
+.photo-container p{
+    padding: .2em 0 .2em .2em;
+    font-size: .85em;
+    margin: 0;
+}
+.username{
+    color: #697fbf;
+}
+.username:hover{
+    color: #516AB5;
+}
+.tag{
+    color: #ff8659;
+}
+.tag:hover{
+    color: #be6443;
+}
+#result-content h1{
+    margin: 1.6em 0 1em .5em;
+}
+.success{
+    margin-left: .8em;
+}
+.no-border{
+    border:none;
+}
+#edit-account input{
+    margin:0;
+    padding:0;
+}
 
+#edit-account{
+    width: 85%;
+    margin:0 auto 3em;
+}
+
+#edit-account .grey-input{
+    margin: .4em 0 1.6em;
+    padding: .5em .5em .5em .4em;
+    width: 100%;
+    background-color: #f2f2f2;
+    border: solid 1px #e0e0e0;
+}
+#edit-account .save{
+    padding: 0.7em 1em;
+    margin-left: .85em;
+    display:inline-block;
+}
+#edit-account .save:hover{
+    background-color: 
+}
+
+a.cancel{
+    background-color: #989898;
+    color:white;
+    padding: 0.7em 1em;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+}
+a.cancel:hover{
+     background-color: #818181;
+}
 /**************************************
 =============== FOOTER STYLE ============
 *****************************************/
 
 footer{
     background-color: black;
-    color:#d9dede;
+    color: #d9dede;
     position: relative;
-    font-size: 0.9em;
+    font-size: 0.85em;
     clear:both;
 }
+
 p.copyright{
     float:left;
     padding-left: 0.75em;
@@ -215,13 +446,34 @@ p.copyright{
 }
 .footer-nav li{
     display: inline-block;
-    padding:0 0.5em;
+    padding:0 0.3em;
+
+}
+.footer-nav li a{
+    color: #d9dede;
+}
+.footer-nav li a:hover{
+    color: #696f6f;
 }
 
 
 /**************************************
 =============== MEDIA QUERIES ============
 *****************************************/
+
+@media only screen and (min-width:550px){
+   .container{
+        width: 545px;
+        margin: 0 auto;
+   }
+}
+
+@media only screen and (min-width:590px){
+    .container{
+        width: 585px;
+     }
+  
+}
 
 @media only screen and (min-width : 600px) {
     #sidebar{
@@ -231,5 +483,42 @@ p.copyright{
     #all-photos{
         float:right;
         width:75%;
+        margin-top: 35px;
+    }
+
+    .big-profilepic,
+    .user-info{
+        float:none;
+    }
+}
+
+@media only screen and (min-width : 670px) {
+    .container{
+        width: 650px;
+    }
+    #home-nav{
+    display: inline;
+   }
+   #home-nav ul{
+    margin-right: 110px;
+    padding-top: 2em;
+   }
+   header{
+    height:100px;
+   }
+}
+
+@media only screen and (min-width:750px){
+    .container{
+        width:735px;
+    }
+}
+
+@media only screen and (min-width:960px){
+    .container{
+        width: 950px;
+    }
+     .photo-container{
+        width: 24%;
     }
 }

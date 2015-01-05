@@ -1,5 +1,6 @@
 <?php require('includes/header.php'); ?>
-	<main id="policy">
+	<main id="policy" >
+	<div class="container">
 		<h1 class="main-title">Terms and Conditions</h1>
 		<p>Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Allure’s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.</p>
 
@@ -14,7 +15,7 @@
 			<li>Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.</li>
 			<li>From time to time, this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</li>
 		</ul>	
-	
+		</div>
 
 	</main>
 

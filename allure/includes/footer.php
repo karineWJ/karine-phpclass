@@ -5,7 +5,7 @@
 		<ul class="footer-nav">
 			<li><a href="about.php">About</a></li>
 			<li><a href="policy.php">Policy</a></li>
-			<li>Contact Us</li>
+			<li><a href="#">Contact</a></li>
 		</ul>
 	</div>
 </footer>

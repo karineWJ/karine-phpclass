@@ -12,7 +12,7 @@
 			</ul>
 		</div>
 
-		<section id="discover">
+		<section id="discover" class="container">
 			<h2>Discover Allure</h2>
 			<article>
 				<h3>Find or create an outfit</h3>
@@ -36,23 +36,27 @@
 		</section>
 
 		<section id="share" class="cf">
-			<img src="https://placeimg.com/200/190/arch">
-			<article>
-				<h3>Show your outfit to the world</h3>
-				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
-			</article>
+			<div class="container">
+				<img src="https://placeimg.com/200/190/arch">
+				<article>
+					<h2 class="smaller-h2">Show your outfit to the world</h2>
+					<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
+				</article>
+			</div>
 		</section>
 
 		<section id="follow" class="cf">
-			<img src="https://placeimg.com/200/190/arch">	
-			<article>
-				<h3>Follow those who inspire you</h3>
-				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
-			</article>
-			
+			<div class="container">
+				<img src="https://placeimg.com/200/190/arch">	
+				<article>
+					<h2 class="smaller-h2">Follow those who inspire you</h2>
+					<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
+				</article>
+			</div>
 		</section>
 
 		<section id="testimonials" class="cf">
+			<div class="container">
 			<h2>What they think of us</h2>
 			<article class="magazine">
 				<img src="images/marie-claire.png" width="200" height="60" alt="Marie-Claire">
@@ -60,14 +64,15 @@
 			</article>
 
 			<article class="magazine">
-				<img src="images/cosmo.png" width="210" height="51" alt="Cosmopolitan">
+				<img src="images/cosmopolitan.png" width="190" height="35" alt="Cosmopolitan">
 				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
 			</article>
 
 			<article class="magazine">
-				<img src="images/nylon.png" width="200" height="75" alt="Nylon">
+				<img src="images/nylon.png" width="165" height="62" alt="Nylon">
 				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
 			</article>
+			</div>
 		</section>
 
 		<section id="register-reminder">

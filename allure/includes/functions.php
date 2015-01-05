@@ -109,6 +109,22 @@ function count_user_post_comments( $user, $db){
 }
 
 /**
+ * Count the total number of uploaded images
+ * @param  int user - a user ID
+ * @param resource db - database connection
+ */
+function count_photos_uploaded(	$user, $db){
+	//count photos uploaded
+	$query = "SELECT COUNT(*) AS total
+			  FROM photos
+			  WHERE user_id = $user";
+
+	$result = $db->query($query);
+	$row = $result->fetch_assoc();
+	return $row['total'];
+}
+
+/**
  * Generate an ID badge for any user
  */
 function user_badge( $user, $db ){
@@ -124,10 +140,10 @@ function user_badge( $user, $db ){
 		$row = $result->fetch_assoc();
 
 		if( $row['profilepic'] ){
-			$image = $row['profilepic'];
+			$image = 'http://localhost/karine-phpclass/allure' . $row['profilepic'];
 		}else{
 			//document root is htdocs
-			$image = 'http://localhost/karine-phpclass/blog/images/default-avatar.png';
+			$image = 'http://localhost/karine-phpclass/allure/images/default-avatar.png';
 		}
 
 		//display it
@@ -135,8 +151,18 @@ function user_badge( $user, $db ){
 		<div class="user-badge">
 			<img src="<?php echo $image; ?>" class="user-pic">
 			
-			<div id="dropdown" class="user-name">
-				<a href="#"><?php echo $row['username']; ?></a>
+			<div class="user-name dropdown">
+				
+				<a href="#" class="account"><?php echo $row['username']; ?><i class="icon-down-dir"></i></a>
+
+				<div class="submenu">
+					<ul class="root">
+						<li><a href="../admin/index.php">View profile</a></li>
+						<li><a href="../admin/account-setting.php">Account Settings</a></li>
+						<li><a href="login.php?action=logout">Log Out</a></li>
+					</ul>
+				</div>
+
 			</div>
 
 		</div> 

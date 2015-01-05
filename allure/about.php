@@ -1,19 +1,18 @@
 <?php require('includes/header.php'); ?>
-	<main>
+	<main class="container">
 		<section id="about">
 			<article>
-				<img src="https://placeimg.com/250/270/arch">
-				<div>
-				<h2>About Us</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.</p>
-					<p>Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet.</p>
-				</div>
+				<h2>About Allure</h2>
+					<p class="allure-info">Allure is an online destination for those who enjoy being up to date with the latest wearable fashion trends. It is not only a community of stylists and fashionistas, but also of men and women who enjoy discovering and sharing looks that can be worn by anybody. It is an online personal closet where you can share your outfit ideas and inspire others while letting them save your outfit inside their personalized board.</p>
 			</article>
 
-			<article>
-				<img src="https://placeimg.com/250/270/arch">
-				<h2>A word from the CEO</h2>
-				<p>Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet.</p>
+			<article id="ceo">
+				<img src="images/ceo.png" alt="CEO and founder">
+				<div class="ceo-info">
+					<h2>A word from the CEO</h2>
+					<p class="allure-info">I was always that girl who wanted to create stylish outfits everyday and so it would take me at least an hour to figure out what to wear. This dilemma inspired me to create an online community that would allow people to share their outfits while getting inspired by other people's style.</p>
+					<p class="allure-info">Founder & CEO, Karine Wu Jye</p>
+				</div>
 			</article>
 		</section>
 
