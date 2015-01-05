@@ -1,20 +1,20 @@
-<!-- <?php  //if logged in, show admin-header.php and search form
-//if( $_SESSION['loggedin'] = true ){
+<?php 
+require('includes/config.php');
+
+ //if logged in, show admin-header.php and search form
+if( $_SESSION['loggedin'] = true ){
 ?>
-<?php //require('admin/admin-header.php'); ?>
-<?php //}else{ ?>
-<?php //require('includes/header.php'); 
-	//explore configuration
-	//$per_page = 16; //number of photos per page
-	// $page_number = 1; //default current starting page
-?> --> 
- 
-<?php require('includes/header.php');  
+<?php require('admin/admin-header.php'); ?>
+
+<?php }else{ ?>
+<?php require('includes/header.php'); 
+}
+
 	//explore configuration
 	$per_page = 16; //number of photos per page
-	$page_number = 1; //default current starting page
-
-?>
+	 $page_number = 1; //default current starting page
+?> 
+ 
 <main>
 	<div id="explore-wrapper" class="container">
 	<?php  // get username, photo_link, photo_id, and tag title. Get most recent photos

@@ -1,4 +1,5 @@
 <?php 
+
 session_start();
 //security check! make sure the person viewing this page is logged in 
 if( $_SESSION['loggedin'] != true ){
@@ -8,11 +9,14 @@ if( $_SESSION['loggedin'] != true ){
 	die('You do not have permission to view this page.');
 }
 //connect to database
-require('../includes/config.php');
-include_once('../includes/functions.php');
+
+include_once( SITE_PATH . 'includes/functions.php');
 
 //who is logged in? store in a var for easy use on admin pages
 $user_id = $_SESSION['user_id'];
+
+//upload for avatars
+include( SITE_PATH. 'admin/upload-parser.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +25,9 @@ $user_id = $_SESSION['user_id'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin Panel - Profile Page</title>
-	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../css/admin-style.css">
-	<link rel="stylesheet" type="text/css" href="../css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL ?>css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL ?>css/admin-style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL ?>css/fontello.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 	<script type="text/javascript" >
@@ -68,18 +72,16 @@ $user_id = $_SESSION['user_id'];
 			
 			<nav id="home-nav" class="cf">
 				<ul>
-					<li><a href="../explore.php">Explore</a></li>
-					<li><a href="#" class="coral"><i class="icon-upload"></i>Upload</a></li>
+					<li><a href="<?php echo SITE_URL ?>explore.php">Explore</a></li>
+					<li><a href="<?php echo SITE_URL ?>admin/upload-images.php" class="coral"><i class="icon-upload"></i>Upload</a></li>
 					<li><a href="#"><i class="icon-plus"></i>Board</a></li>
 				</ul>
 			</nav>
 			
 			<?php user_badge( $user_id, $db ); ?>
 			
-			<!-- <ul class="utilities">
-				<li><a href="#">Account Settings</a></li>
-				<li><a href="login.php?action=logout">Log Out</a></li>
-			</ul> -->
 		</div>
-
+<form action="search.php" method="get" id="searchform">
+		<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
+	</form>
 	</header>

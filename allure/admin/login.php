@@ -1,8 +1,9 @@
 <?php
+require('../includes/config.php');
 //opens or resumes a session
 session_start();
 //connect to DB
-require('../includes/config.php');
+
 require_once('../includes/functions.php');
 //parse the form if it was submitted
 if( $_POST['did_login'] == true ){
@@ -92,7 +93,7 @@ elseif( $_COOKIE['loggedin'] == true){
 <head>
 	<meta charset="utf-8">
 	<title>Allure Login Form</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL ?>css/style.css">
 </head>
 
 <body>

@@ -1,4 +1,6 @@
-<?php require('includes/header.php'); ?>
+<?php 
+require('includes/config.php');
+require('includes/header.php'); ?>
 	<main class="container">
 		<section id="about">
 			<article>

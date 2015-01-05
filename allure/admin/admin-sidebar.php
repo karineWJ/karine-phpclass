@@ -1,8 +1,9 @@
+
 <aside id="sidebar" class="cf">
 	<div class="container">
 
 	<?php //get profile picture, joined date, user's biography
-	$query = "SELECT profilepic, date_joined, biography
+	$query = "SELECT medium_img, date_joined, biography
 			  FROM users
 			  WHERE user_id = $user_id";
 	//run it
@@ -10,8 +11,8 @@
 	if( $result->num_rows >= 1 ){
 		$row = $result->fetch_assoc();
 
-		if( $row['profilepic'] ){
-			$image = 'http://localhost/karine-phpclass/allure' . $row['profilepic'];
+		if( $row['medium_img'] ){
+			$image = SITE_URL . $row['medium_img'];
 		}else{
 			//document root is htdocs
 			$image = 'http://localhost/karine-phpclass/allure/images/default-avatar.png';

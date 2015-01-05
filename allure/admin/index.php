@@ -1,9 +1,8 @@
-<?php require('admin-header.php'); ?>
+<?php 
+require('../includes/config.php');
+require('admin-header.php'); ?>
 	<div class="container">
 
-	<form action="search.php" method="get" id="searchform">
-		<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
-	</form>
 
 	<?php include('admin-sidebar.php'); ?>
 

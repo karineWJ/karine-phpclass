@@ -1,4 +1,6 @@
-<?php require('includes/header.php'); ?>
+<?php 
+require('includes/config.php');
+require('includes/header.php'); ?>
 	<main id="policy" >
 	<div class="container">
 		<h1 class="main-title">Terms and Conditions</h1>

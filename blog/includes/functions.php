@@ -113,7 +113,7 @@ function count_user_post_comments( $user, $db){
  */
 function user_badge( $user, $db ){
 	//get the user's name, profile pic, admin status
-	$query = "SELECT username, userpic, is_admin
+	$query = "SELECT username, thumb_img, is_admin
 			  FROM users
 			  WHERE user_id = $user
 			  LIMIT 1";
@@ -123,8 +123,8 @@ function user_badge( $user, $db ){
 	if($result->num_rows == 1 ){
 		$row = $result->fetch_assoc();
 
-		if( $row['userpic'] ){
-			$image = $row['userpic'];
+		if( $row['thumb_img'] ){
+			$image = SITE_PATH . $row['thumb_img'];
 		}else{
 			//document root is htdocs
 			$image = 'http://localhost/karine-phpclass/blog/images/default-avatar.png';

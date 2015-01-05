@@ -129,7 +129,7 @@ function count_photos_uploaded(	$user, $db){
  */
 function user_badge( $user, $db ){
 	//get the user's name, profile pic, admin status
-	$query = "SELECT username, profilepic, is_admin
+	$query = "SELECT username, thumb_img, is_admin
 			  FROM users
 			  WHERE user_id = $user
 			  LIMIT 1";
@@ -139,8 +139,8 @@ function user_badge( $user, $db ){
 	if($result->num_rows == 1 ){
 		$row = $result->fetch_assoc();
 
-		if( $row['profilepic'] ){
-			$image = 'http://localhost/karine-phpclass/allure' . $row['profilepic'];
+		if( $row['thumb_img'] ){
+			$image = SITE_URL . $row['thumb_img'];
 		}else{
 			//document root is htdocs
 			$image = 'http://localhost/karine-phpclass/allure/images/default-avatar.png';
@@ -157,16 +157,15 @@ function user_badge( $user, $db ){
 
 				<div class="submenu">
 					<ul class="root">
-						<li><a href="../admin/index.php">View profile</a></li>
-						<li><a href="../admin/account-setting.php">Account Settings</a></li>
-						<li><a href="login.php?action=logout">Log Out</a></li>
+						<li><a href="<?php echo SITE_URL ?>admin/index.php">View profile</a></li>
+						<li><a href="<?php echo SITE_URL ?>admin/account-setting.php">Account Settings</a></li>
+						<li><a href="<?php echo SITE_URL ?>admin/login.php?action=logout">Log Out</a></li>
 					</ul>
 				</div>
 
 			</div>
 
 		</div> 
-
 	
 		<?php
 	}//end if 

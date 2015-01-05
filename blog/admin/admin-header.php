@@ -13,6 +13,10 @@ include_once('../includes/functions.php');
 
 //who is logged in? store in a var for easy use on admin pages
 $user_id = $_SESSION['user_id'];
+
+//upload for avatars
+include('upload-parser.php');
+
 ?>
 <!DOCTYPE html>
 <html>

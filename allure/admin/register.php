@@ -1,7 +1,7 @@
 <?php 
 //open the sesion and connect to database
 session_start();
-require('../includes/config.php');
+require('includes/config.php');
 include_once('../includes/functions.php');
 
 //parse the form if the user submitted it
@@ -106,7 +106,7 @@ if($_POST['did_register']){
 <head>
 	<meta charset="utf-8">
 	<title>Allure Sign Up for an Account</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo SITE_URL ?>css/style.css">
 </head>
 
 <body>

@@ -1,4 +1,6 @@
-<?php require('admin-header.php');
+<?php 
+require('includes/config.php');
+require('admin-header.php');
 //search configuration
 $per_page = 10; //number of photos per page
 $page_number = 1; //default current starting page

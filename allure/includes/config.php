@@ -13,6 +13,11 @@ if( $db->connect_errno > 0 ){ //check to see if the database has more than 0 err
 	die('Unable to connect to Database');
 }
 
+//Define File Path Constants
+
+define("SITE_URL",'http://localhost/karine-phpclass/allure/'); //(name, value)
+define("SITE_PATH",'C:/xampp/htdocs/karine-phpclass/allure/'); 
+
 //error reporting
 //show all errors except notices ( E_ALL & ~E_NOTICE )
 //show all errors ( E_ALL )

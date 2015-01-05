@@ -1,11 +1,23 @@
-<?php require('admin-header.php'); ?>
+<?php 
+require('../includes/config.php');
+require('admin-header.php'); ?>
 	
 	<main>
 		<div class="container">
-			<form id="edit-account">
-				<h2>Account Settings</h2>
+			<h2 class="tabbed-title">Account Settings</h2>
+
+			<?php if( isset($statusmsg) ){
+				echo $statusmsg;
+			} ?>
+			
+			<form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" id="edit-account">
+				
 				<fieldset class="no-border">
 					<label>Profile Picture</label>
+					<input type="file" name="uploadedfile" class="uploadfile">
+
+					<input type="submit" value="Upload Image">
+					<input type="hidden" name="did_upload" value="true">
 				</fieldset>
 
 				<fieldset class="no-border">
@@ -25,6 +37,7 @@
 				<input type="submit" value="Save Profile" class="save">
 				<a href="index.php" class="cancel">Cancel</a>
 			</form>
+
 		</div>
 
 	</main>
