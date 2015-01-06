@@ -173,5 +173,52 @@ function user_badge( $user, $db ){
 	
 }//end function
 
+/**
+ * helper for generating complete URL or filepath to an uploaded image
+ * Path will look like C:/xampp/htdocs/folder/uploads/s45fs836p434_small.jpg
+ * Path will look like C:/xampp/htdocs/folder/uploads/s45fs836p434_small.jpg
+ * URL will look like http://localhost/folder/uploads/s45fs836p434_small.jpg
+ * @param $key string randomly generated key unique to each image
+ * @param $size_name string. valid values are 'thumb_img' (DEFAULT), 'medium_img', 'large_img'
+ * @param $is_path boolean. 1 = returns a file path
+ *							0 = returns a URL
+ */
+function uploaded_image_path($key, $size_name = 'thumb_img', $is_path = true){
+	if($is_path){
+		return SITE_PATH . 'uploads/' .$key . '_' . $size_name . '.jpg';
+	}else{
+		return SITE_URL . 'uploads/' .$key . '_' . $size_name . '.jpg';
+	}
+}
+
+function get_tags($photo_id, $db){
+	//get the tags that are assigned to THIS photo
+		$query ="SELECT tags.title
+				 FROM  tags, photo_tags, photos
+				 WHERE photo_tags.tag_id = tags.tag_id
+				 AND photos.photo_id = photo_tags.photo_id
+				 AND photos.photo_id = $photo_id";
+	//run it
+		$result = $db->query($query);
+	//check it
+	//loop it - return a comma sep list	
+		$num_tags = $result->num_rows;
+		if( $result->num_rows >= 1){
+			$i = 1;
+			?><p>Tags: 
+			
+			<?php while( $row = $result->fetch_assoc() ){ ?>
+			<a href="#"><?php echo $row['title'] ?></a><?php if($i < $num_tags){
+				echo  ', ';
+			} ?> 
+		<?php 
+			$i ++;
+			}//end while
+			?>
+		</p>
+			<?php 
+		}//end if 
+		
+}
 
 //no close php

@@ -247,7 +247,7 @@ input:-moz-placeholder{
 *********************************************/
 
 #home-banner{
-    background-image: url(https://placeimg.com/496/420/arch);
+    background: url(../images/header-image.jpg) 25% 10% no-repeat;
     height: 420px;
     text-align: center;
 }

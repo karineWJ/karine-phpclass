@@ -31,14 +31,14 @@ if( $_POST['did_login'] == true ){
 		if( $result->num_rows == 1 ){
 			//TODO: Make these cookies more secure
 			//success! Remember the user for 1 week
-			setcookie('loggedin', true, time() + 60 * 60 * 24 * 7 );
+			setcookie('loggedin', true, time() + 60 * 60 * 24 * 7, '/' );
 			$_SESSION['loggedin'] = true;
 
 			//WHO is logged in?
 			$row = $result->fetch_assoc();
 			$user_id = $row['user_id'];
 
-			setcookie('user_id', $user_id, time() + 60 * 60 * 24 * 7 );
+			setcookie('user_id', $user_id, time() + 60 * 60 * 24 * 7 , '/');
 			$_SESSION['user_id'] = $user_id;
 
 			//redirect to admin panel
@@ -73,10 +73,10 @@ if( $_GET['action'] == 'logout'){
 	//remove all the session to null
 	unset( $_SESSION['loggedin'] );
 	//set cookies to null
-	setcookie( 'loggedin', '' );
+	setcookie( 'loggedin', '',  time() - 42000, '/');
 	
 	unset($_SESSION['user_id']);
-	setcookie('user_id', '');
+	setcookie('user_id', '', time() - 42000, '/');
 }
 //if the user returns to this file and is still logged in(cookie still valid), re-create the session and then redirect to admin
 elseif( $_COOKIE['loggedin'] == true){ 

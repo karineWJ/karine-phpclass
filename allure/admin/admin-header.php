@@ -4,7 +4,7 @@ session_start();
 //security check! make sure the person viewing this page is logged in 
 if( $_SESSION['loggedin'] != true ){
 	//kick them out to the login form
-	header('Location:login.php');
+	header('Location:'. SITE_URL.'login.php');
 	//stop this file from loading
 	die('You do not have permission to view this page.');
 }
@@ -17,6 +17,9 @@ $user_id = $_SESSION['user_id'];
 
 //upload for avatars
 include( SITE_PATH. 'admin/upload-parser.php');
+//upload for new outfits
+include( SITE_PATH. 'admin/uploadoutfit-parser.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +84,5 @@ include( SITE_PATH. 'admin/upload-parser.php');
 			<?php user_badge( $user_id, $db ); ?>
 			
 		</div>
-<form action="search.php" method="get" id="searchform">
-		<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
-	</form>
+
 	</header>

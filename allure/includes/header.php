@@ -1,5 +1,5 @@
  <?php 
-require('includes/config.php');
+
 require_once('includes/functions.php');
 ?>
 <!DOCTYPE html>

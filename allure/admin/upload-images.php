@@ -1,6 +1,8 @@
 <?php 
 require('../includes/config.php');
-require('admin-header.php'); ?>
+require('admin-header.php'); 
+
+?>
 	
 	<main>
 		<div class="container">
@@ -23,7 +25,7 @@ require('admin-header.php'); ?>
 					<input type="text" name="tag" id="photo-tag" class="grey-input">
 
 					<input type="submit" value="Upload Image" class="save">
-					<input type="hidden" name="did_upload" value="true">
+					<input type="hidden" name="did_uploadoutfit" value="true">
 				
 				<a href="index.php" class="cancel">Cancel</a>
 			</form>

@@ -1,6 +1,21 @@
 <?php
 //parse image uploads if the form was submitted
-if($_POST['did_upload']){
+if($_POST['did_uploadoutfit']){
+	//sanitize the data
+	$description = clean_input($_POST['description'], $db);
+	$tag = $_POST['tag'];
+
+//validate
+	$valid = true;
+	//did they leave description or tag blank?
+	if( strlen($description) == 0 || strlen($tag) == 0 ){
+		$valid = false;
+		$message = "Please fill in all fields.";
+	}
+
+if($valid){
+
+
 	//file uploading stuff begins
 	
 	$target_path = "uploads/";
@@ -12,8 +27,6 @@ if($_POST['did_upload']){
 		'large_img' => 500
 	);	
 	
-	
-
 		
 	// This is the temporary file created by PHP
 	$uploadedfile = $_FILES['uploadedfile']['tmp_name'];
@@ -69,17 +82,20 @@ if($_POST['did_upload']){
 		$didcreate = imagejpeg($tmp,'../'.$filename,70);
 		imagedestroy($tmp);
 		
-		//store in DB if it successfully saved the image to the file
+		
+	}//end of foreach
+	//store in DB if it successfully saved the image to the file
 		if($didcreate){
-			//update the user's info
-			$query = "UPDATE users
-					  SET $size_name = '$filename'
-					  WHERE user_id = $user_id";
+			//add the photo
+			$query = "INSERT INTO photos
+						   (user_id, description, photo_link, date)
+				 		   VALUES
+				 		   ($user_id, '$description', '$randomsha', now() )";
 
 			$result = $db->query($query);
+
+			//TODO: tags??!
 		}		
-	}//end of foreach
-	
 	imagedestroy($src);
 	
 		
@@ -94,6 +110,6 @@ if($_POST['did_upload']){
 	}else{
 		$statusmsg .= "There was an error uploading the file, please try again!<br />";
 	}
-
+}//end if valid
 }
 //end of image parser

@@ -1,10 +1,15 @@
-<?php 
+<?php
+session_start(); 
 require('includes/config.php');
 
  //if logged in, show admin-header.php and search form
-if( $_SESSION['loggedin'] = true ){
+if( $_SESSION['loggedin']  ){
 ?>
 <?php require('admin/admin-header.php'); ?>
+
+<form action="search.php" method="get" id="searchform">
+	<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
+</form>
 
 <?php }else{ ?>
 <?php require('includes/header.php'); 
@@ -18,11 +23,9 @@ if( $_SESSION['loggedin'] = true ){
 <main>
 	<div id="explore-wrapper" class="container">
 	<?php  // get username, photo_link, photo_id, and tag title. Get most recent photos
-	$query = "SELECT photos.photo_id, photos.photo_link, users.username, tags.title
-			  FROM photos, users, tags, photo_tags
+	$query = "SELECT photos.photo_id, photos.photo_link, users.username
+			  FROM photos, users
 			  WHERE users.user_id = photos.user_id
-			  AND photos.photo_id = photo_tags.photo_id
-			  AND photo_tags.tag_id = tags.tag_id
 			  ORDER BY photos.date DESC";
 
 	$result = $db->query($query);
@@ -51,9 +54,10 @@ if( $_SESSION['loggedin'] = true ){
 
 	<?php while( $row = $result_modified->fetch_assoc() ){ ?>
 		<article class="photo-container">
-			<a href="#"><img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link']; ?>" class="photo"></a>
+			<a href="#"><img src="<?php 
+				echo uploaded_image_path($row['photo_link'], 'medium_img', false) ?>" class="photo"></a>
 			<p>Added by <a href="#" class="username"><?php echo $row['username']; ?></a></p>
-			<P>Tags: <a href="#" class="tag"><?php echo $row['title'] ?></a></P>
+			<?php echo get_tags($row['photo_id'], $db) ?>
 			<div class="likes"><i class="icon-heart"></i>NUMBER OF LIKES</div>
 		</article>
 		<?php }//end while ?>

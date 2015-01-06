@@ -1,7 +1,7 @@
 <?php 
 //open the sesion and connect to database
 session_start();
-require('includes/config.php');
+require('../includes/config.php');
 include_once('../includes/functions.php');
 
 //parse the form if the user submitted it
@@ -80,13 +80,13 @@ if($_POST['did_register']){
 		//check to make sure the user was added
 		if($db->affected_rows == 1 ){
 			//log them in and redirect to admin
-			setcookie('loggedin', true, time() + 60 * 60 * 24 * 7 );
+			setcookie('loggedin', true, time() + 60 * 60 * 24 * 7, '/' );
 			$_SESSION['loggedin'] = true;
 
 			//get their new user id
 			$user_id = $db->insert_id;
 
-			setcookie('user_id', $user_id, time() + 60 * 60 * 24 * 7 );
+			setcookie('user_id', $user_id, time() + 60 * 60 * 24 * 7, '/' );
 			$_SESSION['user_id'] = $user_id;
 
 			//redirect

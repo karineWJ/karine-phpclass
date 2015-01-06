@@ -386,7 +386,7 @@ a.account{
 .no-border{
     border:none;
 }
-#edit-account input,
+.edit-account input,
 #uploadImage-form input{
     margin:0;
 }
@@ -395,7 +395,7 @@ input.uploadfile{
     width:300px;
 }
 
-#edit-account,
+.edit-account,
 #uploadImage-form{
     width: 85%;
     margin:0 auto 3em;
@@ -404,7 +404,7 @@ h2.tabbed-title{
     width: 85%;
     margin: 2em auto;
 }
-#edit-account .grey-input,
+.edit-account .grey-input,
 #uploadImage-form .grey-input{
     margin: .4em 0 1.6em;
     padding: .5em .5em .5em .4em;
@@ -412,15 +412,15 @@ h2.tabbed-title{
     background-color: #f2f2f2;
     border: solid 1px #e0e0e0;
 }
-#edit-account .save{
+.edit-account .save{
     margin-left: .85em;
 }
-#edit-account .save,
+.edit-account .save,
 #uploadImage-form .save {
     padding: 0.7em 1em;
     display:inline-block;
 }
-#edit-account .save:hover,
+.edit-account .save:hover,
 #uploadImage-form .save:hover{
     background-color: 
 }
