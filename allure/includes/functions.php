@@ -109,6 +109,24 @@ function count_user_post_comments( $user, $db){
 }
 
 /**
+ *  TODO: Count total number of photos uploaded and photos saved. Order by newest to oldest
+ * @param int user - a user ID
+ * @param resource db - database connection
+ */
+function count_all_photos( $user, $db ){
+	//count all photos
+	$query = "SELECT COUNT(*) AS total
+			  FROM photos, photo_boards
+			  WHERE user_id = $user
+			  ORDER BY date DESC";
+
+	$result = $db->query($query);
+	$row = $result->fetch_assoc();
+	return $row['total'];
+}
+
+
+/**
  * Count the total number of uploaded images
  * @param  int user - a user ID
  * @param resource db - database connection
@@ -118,6 +136,22 @@ function count_photos_uploaded(	$user, $db){
 	$query = "SELECT COUNT(*) AS total
 			  FROM photos
 			  WHERE user_id = $user";
+
+	$result = $db->query($query);
+	$row = $result->fetch_assoc();
+	return $row['total'];
+}
+
+/**
+ * Count total number of boards created
+ * @param int user - a user ID
+ * @param resource db - database connection
+ */
+function count_boards( $user, $db ){
+	//count boards created
+	$query ="SELECT COUNT(*) AS total
+			 FROM boards
+			 WHERE user_id = $user";
 
 	$result = $db->query($query);
 	$row = $result->fetch_assoc();

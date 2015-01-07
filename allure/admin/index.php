@@ -1,52 +1,57 @@
 <?php 
 require('../includes/config.php');
 require('admin-header.php'); ?>
-	<div class="container">
+	
 
+<div class="container">
 
 	<?php include('admin-sidebar.php'); ?>
 
 	<main id="all-photos" class="cf container">
+		<?php //get username
+		$query_getusername = "SELECT username
+				  			  FROM users
+				  			  WHERE user_id = $user_id";
 
-		<?php //get sum of photos uploaded and photos saved, get total number of boards, total number of photos uploaded, total number of likes  ?>
+		$result_getusername = $db->query($query_getusername);
+		$row_getusername = $result_getusername->fetch_assoc();
+
+		 ?>
+
 		<section>
-			<h1><?php echo $row['username']; ?> Profile</h1>
+			<h1><?php echo $row_getusername['username']; ?>'s' Profile</h1>
 
 			<ul class="statistics">
-				<li>You have NUMBER boards</li>
-				<li>You have <?php echo count_photos_uploaded($user, $db); ?> uploaded</li>
+				<li>You have <?php echo count_boards($user_id, $db); ?> boards</li>
+				<li>You have <?php echo count_photos_uploaded($user_id, $db); ?> uploaded</li>
 				<li>You have NUMBER likes</li>
 			</ul>
 		</section>
 
-		<?php 
-		//get username, photo_link, photo_id, and tag title.
-		$query = "SELECT photos.photo_id, photos.photo_link, users.username, tags.title
-			 	  FROM photos, users, tags, photo_tags
-			  	  WHERE users.user_id = photos.user_id
-			  	  AND photos.photo_id = photo_tags.photo_id
-			 	  AND photo_tags.tag_id = tags.tag_id
-			 	  ORDER BY photos.date DESC";
-		//run it 
-		$result = $db->query($query);
-		if( $result->num_row >= 1 ){
-			while( $row = $result->fetch_assoc() ){
-		?>
-			<section id="main-section">
-			<article class="photo-container">
-				<a href="#"><img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link']; ?>" class="photo"></a>
-				<p>Added by <a href="#" class="username"><?php echo $row['username']; ?></a></p>
-				<P>Tags: <a href="#" class="tag"><?php echo $row['title']; ?></a></P>
-				<div class="likes"><i class="icon-heart"></i>NUMBER OF LIKES</div>
-			</article>
-		</section>
-		<?php }//end while
-		}//end if
-		else{
-			echo 'You have no photos on your profile yet';
-			} ?>
 		
+			<section class="main-section">
 
+				<?php //get title of board
+				$query_board = "SELECT title, board_id
+				  			    FROM boards
+				  			    WHERE user_id = $user_id";
+
+				$result_board = $db->query($query_board); 
+				 //make sure it was found
+				if($result_board->num_rows >= 1 ){ ?>
+				
+					
+				<article class="board">
+					<?php while ( $row_board = $result_board->fetch_assoc() ){ ?> 
+					<a href="<?php echo SITE_URL ?>admin/single-board.php?id=<?php echo $row_board['board_id'] ?>"><?php echo $row_board['title'] ?></a>
+					<?php }//end while ?>
+					
+				</article>
+ 					<?php }else{
+ 						echo 'You have no boards on your profile';
+ 					}//end if ?>
+			</section>
+		
 		</div>
 	</main>
 
