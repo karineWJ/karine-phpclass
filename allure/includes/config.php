@@ -14,9 +14,16 @@ if( $db->connect_errno > 0 ){ //check to see if the database has more than 0 err
 }
 
 //Define File Path Constants
+if($_SERVER['DOCUMENT_ROOT'] == '/Applications/XAMPP/xamppfiles/htdocs' ){
+define("SITE_URL",'http://localhost/karine-phpclass/allure/'); //(name, value)
+define("SITE_PATH",'/Applications/XAMPP/xamppfiles/htdocs/karine-phpclass/allure/'); 
+}else{
+
 
 define("SITE_URL",'http://localhost/karine-phpclass/allure/'); //(name, value)
 define("SITE_PATH",'C:/xampp/htdocs/karine-phpclass/allure/'); 
+}
+
 
 //error reporting
 //show all errors except notices ( E_ALL & ~E_NOTICE )

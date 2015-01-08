@@ -2,6 +2,7 @@
 require('includes/config.php');
  require('includes/header.php'); ?>
 	<main>
+	<?php echo $_SERVER['HTTP_HOST'] ?>
 	
 		<section id="home-banner">
 			<h1 id="header-title">Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</h1>
