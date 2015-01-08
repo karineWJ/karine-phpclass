@@ -493,7 +493,7 @@ p.copyright{
         float: left;
         width: 25%;
     }
-    #all-photos{
+    main.all-photos{
         float:right;
         width:75%;
         margin-top: 35px;

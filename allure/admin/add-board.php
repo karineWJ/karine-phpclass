@@ -24,22 +24,6 @@ require('admin-header.php');
 					<label for="tags">Tags</label>
 					<input type="text" name="tag" id="photo-tag" class="grey-input">
 
-					<?php //get all the boards
-					$query = "SELECT * FROM boards";
-					$result = $db->query($query);
-					if( $result->num_rows >= 1 ){
-					?>
-					<fieldset>
-						<select class="picker">
-							<option>Choose one</option>
-							<?php while( $row = $result->fetch_assoc() ){ ?>
-							<option value="<?php echo $row['board_id'] ?>"><?php echo $row['title']; ?></option>
-							<?php }//end while?>
-						</select>
-					</fieldset>
-
-					<?php }//end if?>
-
 					<input type="submit" value="Upload Image" class="save">
 					<input type="hidden" name="did_uploadoutfit" value="true">
 				

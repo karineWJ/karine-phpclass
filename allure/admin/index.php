@@ -7,7 +7,7 @@ require('admin-header.php'); ?>
 
 	<?php include('admin-sidebar.php'); ?>
 
-	<main id="all-photos" class="cf container">
+	<main class="cf container all-photos">
 		<?php //get username
 		$query_getusername = "SELECT username
 				  			  FROM users

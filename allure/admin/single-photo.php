@@ -1,10 +1,11 @@
 <?php 
+//figure out which post to display
 require('../includes/config.php');
 require('admin-header.php'); 
-$board_id = $_GET['id'];?>
+$photo_id = $_GET['id'];?>
 	
 
-<div class="container">	
+<div class="container">
 
 	<?php include('admin-sidebar.php'); ?>
 
@@ -28,31 +29,32 @@ $board_id = $_GET['id'];?>
 				<li>You have NUMBER likes</li>
 			</ul>
 		</section>
-
+		
 		<button onclick="history.go(-1);">Back </button>
-
 		
 			<section class="main-section">
-				<?php //get all photos inside boards
-				 $query = "SELECT photos.photo_id, photos.photo_link 
-						   FROM photos, photo_boards, boards
-			  			   WHERE photo_boards.board_id = boards.board_id
-			  			   AND photo_boards.photo_id = photos.photo_id
-			  			   AND boards.board_id = $board_id
+				<?php //get the all information of photo that the user is trying to view (user, date, description, tags)
+				 $query = "SELECT photos.*, users.username, tags.title 
+						   FROM photos, photo_tags, tags, users
+			  			   WHERE photos.user_id = users.user_id
+			  			   AND photos.photo_id = photo_tags.photo_id
+			  			   AND photo_tags.tag_id = tags.tag_id
+			  			   AND photos.photo_id = $photo_id
 			  			   ORDER BY photos.date DESC";
 
 			  	$result = $db->query($query);
 			  	//make sure it was found
 				if($result->num_rows >= 1 ){ ?>
 
-				<?php while( $row = $result->fetch_assoc() ){ ?>
+					<?php while( $row = $result->fetch_assoc() ){ ?>
 
-					<article class="photo-container">
-						<a href="<?php echo SITE_URL ?>admin/single-photo.php?id=<?php echo $row['photo_id'] ?>"><img src="<?php 
-							echo uploaded_image_path($row['photo_link'], 'medium_img', false) ?>" class="photo"></a>
+					<article class="single-photo">
+						<img src="<?php 
+							echo uploaded_image_path($row['photo_link'], 'large_img', false) ?>" class="large-outfit">
 						<p>Added by <a href="#" class="username"><?php echo $row['username']; ?></a></p>
 						<?php echo get_tags($row['photo_id'], $db) ?>
-						<div class="likes"><i class="icon-heart"></i>NUMBER OF LIKES</div>
+						
+						<div class="photo-description">Description: <?php echo $row['description'] ?></div>
 					</article>
 				<?php }//end while ?>
 				 
