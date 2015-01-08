@@ -83,7 +83,9 @@ li{
 a{
     text-decoration: none;
 }
-
+fieldset{
+    border: none;
+}
 input{
     display:block;
     margin: 0.6em auto 0.4em;
@@ -152,29 +154,7 @@ a.account:hover{
 .icon-upload{
     margin-right: .25em;
 }
-/************************************
-========== UTILITIES STYLES ==========
-************************************/
 
-/*.utilities{
-    position:absolute;
-    top: 0px;
-    right: 10px;
-}
-.utilities li {
-    margin: 0;
-    padding: .3em 0;
-    margin: 0 5px 0 0;
-    color:#d9dede;
- }
-
-
-.utilities a,
-.user-name{
-    text-decoration: none;
-    color:#d9dede;
- }
- */
 
 .user-name{
     text-decoration: none;
@@ -205,6 +185,20 @@ a.account:hover{
     position: relative;
     height: 17px;
     text-align:left;
+}
+#addboard{
+    position: relative;
+}
+form.newboard{
+    border: solid 1.5px #333333; 
+    background: #151515;
+    position: absolute;
+    display: none;
+    top:75px;
+    z-index: 100;
+    width: 200px; 
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 .submenu{
     background: #151515;

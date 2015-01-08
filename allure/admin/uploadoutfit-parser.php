@@ -4,8 +4,9 @@ if($_POST['did_uploadoutfit']){
 	//sanitize the data
 	$description = clean_input($_POST['description'], $db);
 	$tag = $_POST['tag'];
+	$board =$_POST['board'];
 
-//validate
+	//validate
 	$valid = true;
 	//did they leave description or tag blank?
 	if( strlen($description) == 0 || strlen($tag) == 0 ){
@@ -13,7 +14,7 @@ if($_POST['did_uploadoutfit']){
 		$message = "Please fill in all fields.";
 	}
 
-if($valid){
+	if($valid){
 
 
 	//file uploading stuff begins
@@ -93,7 +94,17 @@ if($valid){
 				 		   ($user_id, '$description', '$randomsha', now() )";
 
 			$result = $db->query($query);
+			$photo_id = $db->insert_id;
 
+			if($board != ''){
+			//board
+			$query_b = "INSERT INTO photo_boards
+						   (photo_id, board_id)
+				 		   VALUES
+				 		   ( $photo_id, $board )";
+
+			$result_b = $db->query($query_b);
+			}
 			//TODO: tags??!
 		}		
 	imagedestroy($src);

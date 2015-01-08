@@ -29,11 +29,14 @@ require('admin-header.php');
 					$result = $db->query($query);
 					if( $result->num_rows >= 1 ){
 					?>
+
 					<fieldset>
-						<select class="picker">
-							<option>Choose one</option>
+						<select class="picker" name="board">
+							<option>Choose a Board</option>
 							<?php while( $row = $result->fetch_assoc() ){ ?>
-							<option value="<?php echo $row['board_id'] ?>"><?php echo $row['title']; ?></option>
+							<option  value="<?php echo $row['board_id'] ?>">
+								<?php echo $row['title']; ?>
+							</option>
 							<?php }//end while?>
 						</select>
 					</fieldset>

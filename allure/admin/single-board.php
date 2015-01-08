@@ -33,8 +33,8 @@ $board_id = $_GET['id'];?>
 
 		
 			<section class="main-section">
-				<?php //get all photos inside boards
-				 $query = "SELECT photos.photo_id, photos.photo_link 
+				<?php //get all photos inside boards, including
+				 $query = "SELECT photos.photo_id, photos.photo_link
 						   FROM photos, photo_boards, boards
 			  			   WHERE photo_boards.board_id = boards.board_id
 			  			   AND photo_boards.photo_id = photos.photo_id
