@@ -146,7 +146,7 @@ nav li a:hover{
     width: 161px;
     height: 63px;
     position: relative;
-    top: 0.5em;
+    top: 0.7em;
     left: .55em;
     float:left;
 }
@@ -247,20 +247,31 @@ input:-moz-placeholder{
 *********************************************/
 
 #home-banner{
-    background: url(../images/header-image.jpg) 25% 10% no-repeat;
+    background: url(../images/header-image.jpg);
+    background-size: cover;
     height: 420px;
     text-align: center;
 }
 #home-banner h1{
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
-    padding: 2em 0 1.6em;
+    font-weight: normal;
+    text-shadow: 1px 1px 2px #474747;
 }
-
+#slogan{
+    color:white;
+    font-family: 'dolce_vita_heavyafewXpounds';
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    padding-bottom: 1.6em;
+    font-size: 1.3em;
+}
 #header-title{
     color:white;
     font-family: 'dolce_vita_heavyafewXpounds';
     line-height: 1.5em;
+    letter-spacing: 1px;
+    padding: 2em 0 .7em;
 }
 .sign-up{
     background-color: #697fbf;
@@ -278,8 +289,8 @@ input:-moz-placeholder{
     text-align: center;
     background-color: #f2f5f5;
 }
-#home-SecondNav li:hover{
-    background-color: #e4ebeb;
+#home-SecondNav a:hover{
+    color: black;
 }
 #home-SecondNav ul{
     width: 100%;
@@ -446,6 +457,8 @@ p.copyright{
 =========== MEDIA QUERIES ============
 ************************************/
 
+
+
 @media only screen and (min-width:550px){
   
    .container{
@@ -462,7 +475,7 @@ p.copyright{
     }
     #share article{
         float:right;
-        width: 65%;
+        width: 60%;
         text-align: left;
         padding: 0 1em;
     }
@@ -501,6 +514,26 @@ p.copyright{
     .container{
         width: 585px;
      }
+#home-banner{
+    background-size: cover;
+    height: 530px;
+}
+#home-banner h1{
+        position: relative;
+        top:4em;
+    }
+    #header-title{
+        font-size: 1.9em;
+        padding-bottom: 2em;
+        max-width: 600px;
+    }
+    #slogan{
+        font-size: 1.5em;
+    }
+    .sign-up{
+        position:relative;
+        top: 6em;
+    }
    #home-nav{
     display: inline;
    }
@@ -550,6 +583,9 @@ p.copyright{
     .container{
         width: 950px;
     }
+    #home-banner{
+        height: 560px;
+        }
     #about{
         width: 860px;
     }

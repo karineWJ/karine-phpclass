@@ -36,8 +36,8 @@
 	?>
 	<section class="follow-stats cf">
 		<ul>
-			<li>NUMBER OF FOLLOWERS</li>
-			<li>NUMBER OF FOLLOWEES</li>
+			<li># <span style="color:#697fbf">Followers</span></li>
+			<li># <span style="color:#697fbf">Following</span></li>
 		</ul>
 	</section>
 

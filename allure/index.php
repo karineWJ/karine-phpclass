@@ -2,10 +2,9 @@
 require('includes/config.php');
  require('includes/header.php'); ?>
 	<main>
-	<?php echo $_SERVER['HTTP_HOST'] ?>
-	
 		<section id="home-banner">
-			<h1 id="header-title">Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</h1>
+			<h1 id="header-title">Save looks you love and share your favorite outfits with the world. </h1>
+			<h1 id="slogan">Inspire and get inspired</h1>
 			<a href="admin/register.php" class="sign-up">Get Started</a>
 		</section>
 		
@@ -19,20 +18,20 @@ require('includes/config.php');
 			<h2>Discover Allure</h2>
 			<article>
 				<h3>Find or create an outfit</h3>
-				<img src="https://placeimg.com/222/203/arch">
+				<img src="images/find-create.jpg" width="222" height="211" alt="Find or create">
 				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
 			</article>
 
 			<article>
 				<h3>Add it to your board</h3>
-				<img src="https://placeimg.com/222/203/arch">
+				<img src="images/board-img.jpg" width="222" height="211" alt="Add board">
 				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
 
 			</article>
 
 			<article>
 				<h3>Share your outfit</h3>
-				<img src="https://placeimg.com/222/203/arch">
+				<img src="images/share.jpg" width="222" height="211" alt="Share">
 				<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
 
 			</article>
@@ -43,7 +42,7 @@ require('includes/config.php');
 				<img src="https://placeimg.com/200/190/arch">
 				<article>
 					<h2 class="smaller-h2">Show your outfit to the world</h2>
-					<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
+					<p>Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. </p>
 				</article>
 			</div>
 		</section>
@@ -53,7 +52,7 @@ require('includes/config.php');
 				<img src="https://placeimg.com/200/190/arch">	
 				<article>
 					<h2 class="smaller-h2">Follow those who inspire you</h2>
-					<p>Eum an dicat nusquam repudiare. Postea quodsi eirmod in quo. Idque assentior vix ea, ea erant inciderint mel, illud albucius vis an.</p>
+					<p>Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. </p>
 				</article>
 			</div>
 		</section>

@@ -193,12 +193,20 @@ form.newboard{
     border: solid 1.5px #333333; 
     background: #151515;
     position: absolute;
+    top:80px;
+    z-index: 100; 
     display: none;
-    top:75px;
-    z-index: 100;
-    width: 200px; 
+    width: 205px; 
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    padding: .5em 0;
+}
+
+form.newboard input{
+    padding: .35em;
+}
+#create-button{
+    margin-left:.35em;
 }
 .submenu{
     background: #151515;
@@ -215,7 +223,7 @@ form.newboard{
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
-.submenu:after, .submenu:before {
+.submenu:after, .submenu:before{
     bottom: 100%;
     left: 52%;
     border: solid transparent;
@@ -256,7 +264,7 @@ a.account{
     display: block;
     padding: 11px 0 0 20px;
     height: 28px;
-    width: 93px;
+    width: 110px;
     margin: 6px 0 0 23px;
     cursor:pointer;
     font-family: 'dolce_vitaquite_regular';
@@ -273,12 +281,14 @@ a.account{
 =========== SIDEBAR STYLE ============
 *************************************/
 .container{
-    padding: 0 .75em;
+    padding: 0 .45em;
     margin: 0 auto;
 }
 #sidebar .container{
     padding: 0 .5em;
 }
+#sidebar{
+    margin-bottom: 1em;
 }
 .profile-bio{
     margin: 2.2em auto;
@@ -286,7 +296,8 @@ a.account{
 
 .big-profilepic{
     float:left;
-    width:100px;
+    width:35%;
+    max-width: 160px;
     height: auto;
     border: solid 3px #fff;
     position:relative;
@@ -294,8 +305,9 @@ a.account{
 }
 .user-info{
     float:right;
-    width: 65%;
+    width:65%;
     padding-left: .8em;
+    
 }
 .user-info h2{
     font-size: 0.9em;
@@ -312,15 +324,53 @@ a.account{
 }
 .follow-stats{
     clear:both;
+
+}
+.follow-stats ul{
+    border: solid 1px #d4d4d4;
+    width: 185px;
+    
+}
+.follow-stats li{
+    display: inline-block;
+    padding: .4em .3em;
+    width: 45%;
+    font-size: .85em;
+}
+
+.follow-stats li:last-child{
+    border-left: solid 1px #d4d4d4;
 }
 
 /**************************************
 =============== MAIN STYLE ============
 *****************************************/
+hr{
+    height:2px;
+    background-color: black;
+    border:none;
+}
+.statistics{
+    text-align: center;
+    margin-top: 1.7em;
+}
+.statistics li{
+    display:inline-block;
+    margin: 0.2em .3em;
+    font-family: 'dolce_vitaquite_regular';
+    letter-spacing: 1px;
+    font-size: 1em;
+}
+.statistics li a{
+    color:black;
+}
+.statistics li a:hover{
+    color: #ff8659;
+}
 #result-content .container{
     margin: 0 auto;
 }
-#searchform{
+.searchform{
     margin: 1em auto;
     width: 295px;
     position: relative;
@@ -334,7 +384,7 @@ a.account{
 .searchTerm:focus{
     color: #697fbf;
 }
-#searchform input{
+.searchform input{
     display: inline-block;
 }
 .searchButton{
@@ -346,7 +396,7 @@ a.account{
 .photo-container{
     border: solid 1px #d4d4d4;
     display: inline-block;
-    width: 32%;
+    width: 49%;
     vertical-align: top;
 }
 .photo{
@@ -429,6 +479,26 @@ a.cancel{
 a.cancel:hover{
      background-color: #818181;
 }
+
+.board{
+    background: url(https://placeimg.com/220/160/people) center;
+    border: solid 1px #d4d4d4;
+    display: inline-block;
+    width: 49%;
+    height: 160px;
+    text-align: center;
+    margin: .35em auto;
+}
+.boardname{
+    position: relative;
+    top: 4em;
+    color:white;
+    text-shadow: 2px 1px 2px rgba(147, 150, 150, 1);
+}
+.main-section{
+    margin: 2em auto;
+}
+
 /**************************************
 =============== FOOTER STYLE ============
 *****************************************/
@@ -470,38 +540,32 @@ p.copyright{
 
 @media only screen and (min-width:550px){
    .container{
-        width: 545px;
+        width: 520px;
         margin: 0 auto;
    }
+   .photo-container{
+        width: 32%;
+    }
+    .statistics li{
+        margin: 0 2em;
+    }
+   
 }
 
 @media only screen and (min-width:590px){
     .container{
-        width: 585px;
+        width: 560px;
+     }
+     .board{
+        width: 32%;
      }
   
 }
-
-@media only screen and (min-width : 600px) {
-    #sidebar{
-        float: left;
-        width: 25%;
-    }
-    main.all-photos{
-        float:right;
-        width:75%;
-        margin-top: 35px;
-    }
-
-    .big-profilepic,
-    .user-info{
-        float:none;
-    }
-}
+    
 
 @media only screen and (min-width : 670px) {
     .container{
-        width: 650px;
+        width: 658px;
     }
     #home-nav{
     display: inline;
@@ -510,6 +574,26 @@ p.copyright{
     margin-right: 110px;
     padding-top: 2em;
    }
+   #sidebar{
+        float: left;
+        width: 25%;
+    }
+    main.all-photos{
+        float:right;
+        width:70%;
+        margin-top: 35px;
+    }
+    .user-info {
+    padding-left: 0
+    }
+    .user-info p{
+        width: 160px;
+    }
+    .big-profilepic,
+    .user-info{
+        float:none;
+    }
+
    header{
     height:100px;
    }
@@ -519,6 +603,13 @@ p.copyright{
     .container{
         width:735px;
     }
+    .main-section{
+        padding-left: 1em;
+    }
+    #account-setting{
+        width: 720px;
+    }
+
 }
 
 @media only screen and (min-width:960px){

@@ -105,7 +105,7 @@ $result = $db->query($query);
 ?>
 	
 	<main>
-		<div class="container">
+		<div class="container" id="account-setting">
 			<?php //make sure it was found
 				if( $result->num_rows == 1){
 					$row = $result->fetch_assoc();
@@ -134,16 +134,16 @@ $result = $db->query($query);
 
 				<fieldset class="no-border">
 					<label for="username">Username</label>
-					<input type="text" name="username" id="username-edit" value="<?php echo $row['username'] ?>" class="grey-input">
+					<input type="text" name="username" id="username-edit" value="<?php echo $row['username'] ?>" class="grey-input edit-input">
 
 					<label for="email">Email Address</label>
-					<input type="email" name="email" id="email-edit" value="<?php echo $row['email'] ?>" class="grey-input">
+					<input type="email" name="email" id="email-edit" value="<?php echo $row['email'] ?>" class="grey-input edit-input">
 
 					<label for="password">New Password</label>
-					<input type="password" name="password" id"password-edit" class="grey-input">
+					<input type="password" name="password" id"password-edit" class="grey-input edit-input">
 
 					<label for="about">About Me</label>
-					<input type="text" name="about" id="about-edit" value="<?php echo $row['biography'] ?>" class="grey-input">
+					<textarea rows="5" cols="50" name="about" id="about-edit" class="grey-input edit-input"><?php echo $row['biography'] ?> </textarea>
 				</fieldset>
 
 				<input type="submit" value="Save Profile" class="save">

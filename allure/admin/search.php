@@ -44,7 +44,7 @@ $page_number = 1; //default current starting page
 			$result_modified = $db->query($query_modified);
 	?>
 
-	<form action="search.php" method="get" id="searchform">
+	<form action="search.php" method="get" class="searchform">
 		<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
 	</form>
 	
@@ -60,7 +60,7 @@ $page_number = 1; //default current starting page
 			<a href="#"><img src="<?php echo 'http://localhost/karine-phpclass/allure' . $row['photo_link']; ?>" class="photo"></a>
 			<p>Added by <a href="#" class="username"><?php echo $row['username']; ?></a></p>
 			<P>Tags: <a href="#" class="tag"><?php echo $row['title']; ?></a></P>
-			<div class="likes"><i class="icon-heart"></i>NUMBER OF LIKES</div>
+			<div class="likes"><i class="icon-heart"></i> LIKES</div>
 		</article>
 		<?php }//end while ?>
 	</section>

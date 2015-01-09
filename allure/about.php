@@ -13,7 +13,8 @@ require('includes/header.php'); ?>
 				<div class="ceo-info">
 					<h2>A word from the CEO</h2>
 					<p class="allure-info">I was always that girl who wanted to create stylish outfits everyday and so it would take me at least an hour to figure out what to wear. This dilemma inspired me to create an online community that would allow people to share their outfits while getting inspired by other people's style.</p>
-					<p class="allure-info">Founder & CEO, Karine Wu Jye</p>
+					<p class="allure-info">Founder & CEO,</p>
+					<p class="allure-info">Anastasia Bommas</p>
 				</div>
 			</article>
 		</section>

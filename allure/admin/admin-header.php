@@ -95,13 +95,14 @@ if( $_POST['did_createboard'] ){
 				$(".account").attr('id', '');
 			});
 
+
 			//show addboard form when clicking on link
 			$('#addboard').click(function(){
 
 				var X=$(this).attr('id');
 
 				if(X==1){
-					$('.newboard').hide();
+					$(".newboard").show();
 					$(this).attr('id', '0'); 
 				}else{
 					$(".newboard").show();
@@ -109,15 +110,16 @@ if( $_POST['did_createboard'] ){
 				}
 			});
 
-			//Mouse click on new board
+			//Mouse click on newboard
 			$(".newboard").mouseup(function(){
 				return false
 			});
 
-			//Mouse click on my account link
+			//Mouse click on add account
 			$("#addboard").mouseup(function(){
 				return false
 			});
+
 
 			//Document Click
 			$(document).mouseup(function(){
@@ -139,26 +141,26 @@ if( $_POST['did_createboard'] ){
 				<ul>
 					<li><a href="<?php echo SITE_URL ?>explore.php">Explore</a></li>
 					<li><a href="<?php echo SITE_URL ?>admin/upload-images.php" class="coral"><i class="icon-upload"></i>Upload</a></li>
-					<li id="addboard">
-						<a href="#" ><i class="icon-plus"></i>Board</a>
+					<li>
+						<a href="#" id="addboard"><i class="icon-plus"></i>Board</a>
 						<form class="newboard" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-    			<input type="text" placeholder="Name of board" name="title" id="board-title"/>
-      			
-      			<input type="submit" value="Create board" />
-      			<input type="hidden" name="did_createboard" value="true">
-			</form>
-					</li>
+			    			<input type="text" placeholder="Name of board" name="title" id="board-title"/>
+			      			
+			      			<input type="submit" value="Create board" id="create-button"/>
+			      			<input type="hidden" name="did_createboard" value="true">
+						</form>
+					</li> 
+
 				</ul>
+
 			</nav>
-			
 			
 
 			<?php user_badge( $user_id, $db ); ?>
 
 		</div>
 		
-		<form action="search.php" method="get" id="searchform">
-			<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
-		</form>
+		
+		
 
 	</header>

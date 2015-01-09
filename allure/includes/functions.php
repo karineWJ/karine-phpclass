@@ -227,7 +227,7 @@ function uploaded_image_path($key, $size_name = 'thumb_img', $is_path = true){
 
 function get_tags($photo_id, $db){
 	//get the tags that are assigned to THIS photo
-		$query ="SELECT tags.title
+		$query = "SELECT tags.title
 				 FROM  tags, photo_tags, photos
 				 WHERE photo_tags.tag_id = tags.tag_id
 				 AND photos.photo_id = photo_tags.photo_id

@@ -24,9 +24,11 @@ $photo_id = $_GET['id'];?>
 			<h1><?php echo $row_getusername['username']; ?>'s' Profile</h1>
 
 			<ul class="statistics">
-				<li>You have <?php echo count_boards($user_id, $db); ?> boards</li>
-				<li>You have <?php echo count_photos_uploaded($user_id, $db); ?> uploaded</li>
-				<li>You have NUMBER likes</li>
+			<hr>
+				<li><span class="coral"><?php echo count_boards($user_id, $db); ?></span> <a href="#">boards</a></li>
+				<li><span class="coral"><?php echo count_photos_uploaded($user_id, $db); ?></span> <a href="#">uploaded</a></li>
+				<li><i class="icon-heart coral"></i></span> <a href="#">likes</a></li>
+				<hr>
 			</ul>
 		</section>
 		

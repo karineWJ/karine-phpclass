@@ -19,7 +19,6 @@ define("SITE_URL",'http://localhost/karine-phpclass/allure/'); //(name, value)
 define("SITE_PATH",'/Applications/XAMPP/xamppfiles/htdocs/karine-phpclass/allure/'); 
 }else{
 
-
 define("SITE_URL",'http://localhost/karine-phpclass/allure/'); //(name, value)
 define("SITE_PATH",'C:/xampp/htdocs/karine-phpclass/allure/'); 
 }

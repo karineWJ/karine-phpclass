@@ -30,8 +30,8 @@ require('admin-header.php');
 					if( $result->num_rows >= 1 ){
 					?>
 
-					<fieldset>
-						<select class="picker" name="board">
+					<fieldset class="picker">
+						<select  name="board">
 							<option>Choose a Board</option>
 							<?php while( $row = $result->fetch_assoc() ){ ?>
 							<option  value="<?php echo $row['board_id'] ?>">

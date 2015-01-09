@@ -20,12 +20,15 @@ require('admin-header.php'); ?>
 
 		<section>
 			<h1><?php echo $row_getusername['username']; ?>'s' Profile</h1>
-
+			
 			<ul class="statistics">
-				<li>You have <?php echo count_boards($user_id, $db); ?> boards</li>
-				<li>You have <?php echo count_photos_uploaded($user_id, $db); ?> uploaded</li>
-				<li>You have NUMBER likes</li>
+			<hr>
+				<li><span class="coral"><?php echo count_boards($user_id, $db); ?></span> <a href="#">boards</a></li>
+				<li><span class="coral"><?php echo count_photos_uploaded($user_id, $db); ?></span> <a href="#">uploaded</a></li>
+				<li><i class="icon-heart coral"></i></span> <a href="#">likes</a></li>
+				<hr>
 			</ul>
+			 
 		</section>
 
 		
@@ -41,9 +44,11 @@ require('admin-header.php'); ?>
 				if($result_board->num_rows >= 1 ){ ?>
 				
 					
-				<article class="board">
-					<?php while ( $row_board = $result_board->fetch_assoc() ){ ?> 
-					<a href="<?php echo SITE_URL ?>admin/single-board.php?id=<?php echo $row_board['board_id'] ?>"><?php echo $row_board['title'] ?></a>
+				<article>
+					<?php while( $row_board = $result_board->fetch_assoc() ){ ?> 
+					<a href="<?php echo SITE_URL ?>admin/single-board.php?id=<?php echo $row_board['board_id'] ?>" class="board">
+					<h3 class="boardname"><?php echo $row_board['title'] ?></h3>
+					</a>
 					<?php }//end while ?>
 					
 				</article>

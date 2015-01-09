@@ -7,6 +7,9 @@ if( $_SESSION['loggedin']  ){
 ?>
 <?php require('admin/admin-header.php'); ?>
 
+<form action="search.php" method="get" class="searchform">
+			<input type="search" name="phrase" id="phrase" class="searchTerm" placeholder="Search look" value="<?php echo $_GET['phrase']; ?>"><button type="submit" class="searchButton"><i class="icon-search"></i></button>
+		</form> 
 
 <?php }else{ ?>
 <?php require('includes/header.php'); 
@@ -17,7 +20,7 @@ if( $_SESSION['loggedin']  ){
 	 $page_number = 1; //default current starting page
 ?> 
  
-<main>
+<main class="cf explore-section">
 	<div id="explore-wrapper" class="container">
 	<?php  // get username, photo_link, photo_id, and tag title. Get most recent photos
 	$query = "SELECT photos.photo_id, photos.photo_link, users.username
